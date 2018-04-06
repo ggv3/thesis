@@ -38,6 +38,8 @@ Sprintin viimeiseksi tehtäväksi jäi ProView:ssa ProView:ssa olevan ruudukko-o
 
 ### Sprintin katselmointi ja tulokset
 
+Sprintin katselmoinnissa sidosryhmät tarkastelivat aikaan saatuja muutoksia, ja pääosin he olivat tyytyväisiä, mutta tuoteomistajalta tuli muutama korjauspyyntö. Komponenttien lisäyspainikkeiden kuvat haluttiin muuttaa, koska ne eivät sopineet yleiseen ulkoasuun muiden painikkeiden kanssa. Lisäksi uusi oletusresoluutio aiheutti sen, että uusi näyttö oli oletuksena zoomattu hieman liian lähelle. ProView:ssa on "sovita näyttöön" -toiminto erikseen, ja toiveena oli, että se tapahtuisi myös aina kun luodaan uusi näyttö. Muuten kaikkiin muihin muutoksiin oltiin tyytyväisiä. 
+
 ## 2. Sprintti
 
 ### Sprintin suunnittelu
