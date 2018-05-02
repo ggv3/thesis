@@ -24,7 +24,15 @@ Opinnäytetyön aikana olin osana Scrum tiimiä, missä minä itse keskityin Pro
 
 ## ProView
 
+ProView on selaimessa toimiva tietojärjestelmä, jonka avulla voidaan luoda prosessinäyttöjä, minkä avulla visualisoidaan voimalaitosdataa.
 
+Kristian Laakkosen diplomityössä selvitettiin, että SVG (Scalable Vector Graphics) vaikuttaa parhaalta ratkaisulta pääasiassa kuvioista koostuvan grafiikan toteuttamiseen selaimissa [5]
+
+ProView-työkalussa tehdään prosessinäyttöjä, mihin voidaan lisätä erilaisia kuvia ja muuttujatietoja, joiden data haetaan erilliseltä palvelimelta. Diplomityön toteutuksen vaatimuksena oli, että näyttösovelluksella, minkä avulla katsotaan ProView:n editorityökalulla tehtyjä prosessinäyttöjä, olisi muutaman sekunnin päivitysväli.
+
+Laakkosen työssä tutkittiin erilaisia tapoja hakea dataa palvelimelta selaimeen nopealla päivitysvälillä ja WebSocket-tekniikka osoittautui kaikista parhaimmaksi vaihtoehdoksi, mutta esimerkiksi AJAXin (Asynchronous JavaScript and XML) käyttö on myös tietyissä olosuhteissa hyvin pätevä vaihtoehto.
+
+ProView:n editorityökaluksi valittiin SVG-edit [6], koska haluttiin pitää ProView:n editori- ja näyttösovellus yhtenäisenä, selaimessa toimivana kokonaisuutena ja koska SVG-Editin toiminnallisuudet olivat tarpeeksi monipuoliset vaatimuksiin nähden. [7]
 
 ## 1. Sprintti
 
@@ -80,3 +88,6 @@ Sprintin katselmoinnissa sidosryhmät tarkastelivat aikaan saatuja muutoksia, ja
 2. What is Scrum? Luettavissa: https://www.scrum.org/resources/what-is-scrum. Luettu: 12.04.2018
 3. Scrum Roles Demystified. Luettavissa: https://www.scrumalliance.org/agile-resources/scrum-roles-demystified. Luettu: 12.04.2018
 4. What is a Sprint? Luettavissa: https://www.scrum-institute.org/What_is_a_Sprint.php. Luettu: 12.04.2018
+5. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 14 kappale 3.6.5. Luettu: 02.05.2018
+6. SVG-Edit https://github.com/SVG-Edit
+7. 5. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 35 kappale 6.2.2. Luettu: 02.05.2018
