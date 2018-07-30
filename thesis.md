@@ -12,8 +12,6 @@ Järjestelmä tehtiin, koska aikaisemmissa työpöytäsovelluksissa on ollut oma
 
 Työn tavoitteena oli jatkokehittää Kristian Laakkosen diplomityönä valmistunutta järjestelmää käyttäjäpalautteiden pohjalta. Järjestelmä on ollut käytössä jo useamman vuoden ja eri käyttäjäryhmät ovat löytäneet erilaisia parannusehdotuksia, joista valittiin kaikista tärkeimmät tätä työtä varten.
 
-## Spring
-
 ## Scrum
 
 Scrum on ketterän projektityön viitekehys, minkä tarkoitus on tehdä monimutkaisesta projektityöstä mahdollisimman sujuvaa ja läpinäkyvää kaikille sidosryhmille. [2] Scrumissa työskentely aloitetaan niin, että Tuoteomistaja, joka on yksi Scrum tiimin rooleista [3], luo priorisoidun kehitysjonon halutuista kehityskohteista. Seuraava vaihe on Sprint planning, missä kehitystiimi valitsee seuraavaan sprinttiin kehityskohteet priorisoidun listan mukaan.
@@ -24,15 +22,11 @@ Opinnäytetyön aikana olin osana Scrum tiimiä, missä minä itse keskityin Pro
 
 ## ProView
 
-ProView on selaimessa toimiva tietojärjestelmä, jonka avulla voidaan luoda prosessinäyttöjä, minkä avulla visualisoidaan voimalaitosdataa.
+ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. [6] Järjestelmällä on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuskia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi. [7]
 
-Kristian Laakkosen diplomityössä selvitettiin, että SVG (Scalable Vector Graphics) vaikuttaa parhaalta ratkaisulta pääasiassa kuvioista koostuvan grafiikan toteuttamiseen selaimissa [5]
+ProView:n prosessinäytöissä on staattisia ja muuttuvia elementtejä. Staattisilla elementeillä kuvataan yleensä eri prosessien yleinen kulku ja ns. isompi kokonaisuus. Muuttuvat elementit ovat prosessin sisällä olevat muuttujat, mitkä näyttävät erilaisia arvoja. Nämä arvot voivat olla esimerkiksi erilaisten pumppujen lämpötilat ym. prosessille tärkeät tiedot. ProView:n näyttöjä pidetään laitosten valvomoilla auki jatkuvasti ja on tarkoitus, että näiden näyttöjen perusteella voidaan tarkastella voimalaitosten eri prosesseja lähes reaaliaikaisesti. Tämän takia tietojärjestelmän täytyy hakea muuttujien arvoja tietokannasta tasaisin väliajoin.
 
-ProView-työkalussa tehdään prosessinäyttöjä, mihin voidaan lisätä erilaisia kuvia ja muuttujatietoja, joiden data haetaan erilliseltä palvelimelta. Diplomityön toteutuksen vaatimuksena oli, että näyttösovelluksella, minkä avulla katsotaan ProView:n editorityökalulla tehtyjä prosessinäyttöjä, olisi muutaman sekunnin päivitysväli.
-
-Laakkosen työssä tutkittiin erilaisia tapoja hakea dataa palvelimelta selaimeen nopealla päivitysvälillä ja WebSocket-tekniikka osoittautui kaikista parhaimmaksi vaihtoehdoksi, mutta esimerkiksi AJAXin (Asynchronous JavaScript and XML) käyttö on myös tietyissä olosuhteissa hyvin pätevä vaihtoehto.
-
-ProView:n editorityökaluksi valittiin SVG-edit [6], koska haluttiin pitää ProView:n editori- ja näyttösovellus yhtenäisenä, selaimessa toimivana kokonaisuutena ja koska SVG-Editin toiminnallisuudet olivat tarpeeksi monipuoliset vaatimuksiin nähden. [7]
+Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. [9] Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. [10] Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) [8]
 
 ## 1. Sprintti
 
@@ -91,3 +85,6 @@ Sprintin katselmoinnissa sidosryhmät tarkastelivat aikaan saatuja muutoksia, ja
 5. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 14 kappale 3.6.5. Luettu: 02.05.2018
 6. SVG-Edit https://github.com/SVG-Edit
 7. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 35 kappale 6.2.2. Luettu: 02.05.2018
+8. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.3. Luettu: 30.7.2018
+9. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 32 kappale 5.1. Luettu: 30.7.2018
+10. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.2. Luettu: 30.7.2018
