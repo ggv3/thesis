@@ -153,6 +153,18 @@ Aiemmassa sprintissä käytiin jo läpi sidosryhmien vaatimukset, joten seuraava
 
 Toteutus alkoi niin, että lisäsin Javaluokkaan, mikä edusti muuttujalistoja, uuden boolean tyyppisen attribuutin, mikä osoittaisi, että onko muuttujalistassa näkyvissä muuttujien raja-arvot ja status vai ei. Lisäksi tein migraatioskriptin, mikä lisäsi itse tietokantatauluun uuden attribuutin ja päivittäisi myös kaikki olemassaolevat rivit lisäämällä niihin tämän saman tiedon. Koska missään muussa muuttujalistassa ei ole tarkoitus olla näkyvissä muuttujien raja-arvoja, niin kaikki vanhat rivit saisi attribuutin arvoksi false.
 
+Muuttujien raja-arvojen haun ajattelin tehdä samanlaisella toteutuksella kuin itse muuttujien haku. AJAX-kutsu, mikä tehtäisiin samalla syklillä kuin itse muuttujien haku. Toteutus tapahtui niin, että frontend lähetti backendiin listan muuttujien nimistä, joiden raja-arvot haluttiin hakea. Backendiin taas toteutettiin ominaisuus mikä tarkistaa listan jokaisen muuttujan kohdalla, että onko tietokannassa olemassa samannimistä muuttujaa ja jos on, niin onko sille asetettu raja-arvoja. Jos sellaiset löytyy, niin ne asetetaan muuttujaolioon ja lopulta päivitetty lista lähetetään takaisin frontendiin. Tässä vaiheessa meillä on kaikki tarvittava data ja se piti enää asettaa muuttujalistaan.
+
+<img src="proview-variable-values-before.png"> Kuva 5
+
+Kuvassa 5 näkyy ensimmäisen toteutuksen lopputulos. "getvaluesinbatch" endpoint hakee kaikki halutut muuttujat ja "getpvvariableinformation" endpoint hakee muuttujan raja-arvot ja statuksen. Tässä toteutuksessa muuttujalistassa on 83 muuttujaa ja sekä muuttujia ja raja-arvoja haetaan yhtäaikaa muutaman sekunnin välein. Tässä kuvassa voi huomata, että muuttujien ja raja-arvojen haussa kestää vaihtelevasti 280-725 millisekuntia ja sen todettiin olevan aivan liian hidasta vaatimuksiin nähden. Keskustelin tästä muiden kehittäjien ja tuoteomistajan kanssa ja tulimme siihen lopputulokseen, että vain muuttujien lukuarvo on sellainen, minkä täytyy päivittyä muutaman sekunnin välein, koska on paljo harvinaisempaa, että muuttujien raja-arvot muuttuvat.
+
+<img src="proview-variable-values-after.png"> Kuva 6
+
+Kuvassa 6 näkyy seuraava toteutus, missä muuttujien raja-arvot haetaan vain silloin kun sivu ladataan ja muuttujien lukuarvot haku jatkuu muutaman sekunnin välein. Kuvasta huomataan, että suorituskyky paranee huomattavasti. Raja-arvojen haussa kestää yhä hieman pidempään, mutta muuttujen lukuarvojen haussa kestää pääosin alle 100 millisekuntia. Ainoa ongelma tässä toteutuksessa on se, että jos muuttujien raja-arvot muuttuvat, niin silloin sivu täytyy ladata uudelleen, että uudet raja-arvot tulevat näkyviin. Tuoteomistajan mukaan tämä ei ole ongelma, koska tuollainen muutos olisi muutenkin sen verran iso, että päivitys tuntuu käyttäjälle loogiselta.
+
+<img src="proview-additional-information.png">
+
 ## Lähteet
 
 1. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen
