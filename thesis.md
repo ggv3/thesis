@@ -143,6 +143,16 @@ Ehdin myös suunnitella datan lisäämistä muuttujalistoihin. Lähtöasetelma o
 
 Sprintin katselmointi meni samalla kaavalla kuin ennenkin. Toteutetut muutokset olivat mieluisia. Erityisesti tärkeitä huomioita olivat, että TOPi:n logoa ja otsikkokenttää voi halutessaan siirtää ja poistaa uudesta näytöstä.
 
+## 5. Sprintti
+
+Opinnäytetyön piti alkuperäisen suunnitelman mukaan kestää neljä sprinttiä, mutta aikataulu suunniteltiin joustavaksi, että työskentelyä voitaisiin tarvittaessa jatkaa vielä yhden sprintin verran. Aiemmin mainittu sairastumiseni viivästytti hieman toteutusta, joten päätimme, että teen vielä yhden sprintin verran töitä, jonka jälkeen tarkastelemme tuloksia ja päätämme opinnäytetyön teknisen osuuden.
+
+Sprintin suunnittelussa varmistin vielä sidosryhmiltä aloittamani tehtävän vaatimukset. Suunnittelimme suullisesti muuttujalistan ulkoasua uusilla tiedoilla ja sovimme, että näytän tuloksia kehityksen aikana saadakseni mahdollisimman nopeaa palautetta.
+
+Aiemmassa sprintissä käytiin jo läpi sidosryhmien vaatimukset, joten seuraavaksi käydään läpi teknisiä haasteita. Jokainen prosessinäyttö, ja muuttujalista on tallennettu tietokantaan eri atribuutteineen. Minä olin nyt luomassa muuttujalistapohjaan täysin uutta vaihtoehtoa, joten nämä tiedot piti lisätä myös kaikkiin olemassaoleviin muuttujalistoihin. Toinen haaste, joka osoittautui koko opinnäytetyön haastavimamksi osuudeksi, oli suorituskyky. Tavoitteena tosiaan oli, että muuttujien tiedot päivittyisivät prosessinäyttöön aina muutaman sekunnin välein ja minun muutokset ei saisi hidastaa toiminnallisuutta liikaa.
+
+Toteutus alkoi niin, että lisäsin Javaluokkaan, mikä edusti muuttujalistoja, uuden boolean tyyppisen attribuutin, mikä osoittaisi, että onko muuttujalistassa näkyvissä muuttujien raja-arvot ja status vai ei. Lisäksi tein migraatioskriptin, mikä lisäsi itse tietokantatauluun uuden attribuutin ja päivittäisi myös kaikki olemassaolevat rivit lisäämällä niihin tämän saman tiedon. Koska missään muussa muuttujalistassa ei ole tarkoitus olla näkyvissä muuttujien raja-arvoja, niin kaikki vanhat rivit saisi attribuutin arvoksi false.
+
 ## Lähteet
 
 1. Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen
