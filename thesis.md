@@ -10,15 +10,15 @@ Opinnäytetyöni käsittelee näitä parannusehdotuksia ja niiden toteuttamista.
 
 ## Tavoitteet
 
-Työn tavoitteena oli jatkokehittää Kristian Laakkosen diplomityönä valmistunutta järjestelmää käyttäjäpalautteiden pohjalta ja sen avulla kasvattaa omaa osaamistani. Parannusehdotuksien suunnittelussa ja toteutuksessa joudun kiinnittämään huomiota minulle uusiin asioihin ohjelmistokehityksessä ja pääsen tutustumaan energia-alan lainalaisuuksiin.
+Työn tavoitteena oli jatkokehittää Kristian Laakkosen diplomityönä valmistunutta järjestelmää käyttäjäpalautteiden pohjalta ja sen avulla kasvattaa omaa osaamistani. Parannusehdotuksien suunnittelussa ja toteutuksessa joudun kiinnittämään huomiota minulle uusiin asioihin ohjelmistokehityksessä ja pääsen tutustumaan energia-alan lainalaisuuksiin. Työn suurimmat haasteet tulevat olemaan olemassaolevan ProView-työkalun ohjelmakoodin tulkinta ja siinä käytettyjen ratkaisujen ymmärtäminen. Projektissa on myös käytetty minulle tuntemattomia JavaScript-kirjastoja, joten myös niiden ymmärtäminen tulee olemaan oma haasteensa. Korostan myös sitä, että minulle energia-ala ja sen lainalaisuudet ovat lähes tuntemattomia, joten tarkoituksena on myös ymmärtää, että miksi toivottuja muutoksia tehdään ja mikä niiden merkitys on.
 
 ## Rajaus
 
-Opinnäytetyössä ei toteuteta uutta sovellusta, eikä uusia toiminnallisuuksia olemassa olevaan sovellukseen. Tarkoituksena on tutkia jo olemassa olevia ratkaisuja ja parannella niitä käyttäjäpalautteiden pohjalta. Opinnäytetyössä kerrotaan parannusehdotusten taustat, miksi ne halutaan ja kuinka toteutus tapahtui.
+Opinnäytetyössä ei toteuteta uutta sovellusta, eikä uusia toiminnallisuuksia olemassa olevaan sovellukseen. Tarkoituksena on tutkia jo olemassa olevia ratkaisuja ja parannella niitä käyttäjäpalautteiden pohjalta. Opinnäytetyössä kerrotaan parannusehdotusten taustat, miksi ne halutaan ja niiden kehityskulku. Opinnäytetyössa ei keskitytä kertomaan verkkosivuista ja niiden toimintaperiaatteista yleisellä tasolla, koska niistä aiheista löytyy materiaalia internetistä jo valmiiksi, enkä usko niiden tuovan lisäarvoa tälle opinnäytetölle. Pidän itseäni ohjelmistokehittäjänä, enkä graafisena suunnittelijana, joten prioriteettini on tehdä laadukasta ja toimivaa ohjelmakoodia ja kehityskohteiden graafinen ulkoasu ei ole toteutuksen kärkipäässä.
 
 ## Scrum
 
-Scrum on ketterän projektityön viitekehys, minkä tarkoitus on tehdä monimutkaisesta projektityöstä mahdollisimman sujuvaa ja läpinäkyvää kaikille sidosryhmille. [2] Scrumissa työskentely aloitetaan niin, että Tuoteomistaja, joka on yksi Scrum tiimin rooleista [3], luo priorisoidun kehitysjonon halutuista kehityskohteista. Seuraava vaihe on Sprintin suunnittelu, missä kehitystiimi valitsee seuraavaan sprinttiin kehityskohteet priorisoidun listan mukaan.
+Scrum on ketterän projektityön viitekehys, minkä tarkoitus on tehdä monimutkaisesta projektityöstä mahdollisimman sujuvaa ja läpinäkyvää kaikille sidosryhmille. [2] Scrumissa työskentely aloitetaan niin, että Tuoteomistaja, joka on yksi Scrumin rooleista [3], luo priorisoidun kehitysjonon halutuista kehityskohteista. Seuraava vaihe on Sprintin suunnittelu, missä kehitystiimi valitsee seuraavaan sprinttiin kehityskohteet priorisoidun listan mukaan.
 
 Sprintit ovat yleensä lyhyitä työjaksoja, missä kehitysryhmä keskittyy työskentelemään vain kyseiseen sprinttiin valituiden kehityskohteiden parissa. Sprintin lopussa pidetään katselmointi, missä kehitystiimi, Tuoteomistaja ja mahdollisia muita sidosryhmiä tarkastavat Sprintin tuloksen ja antavat palautetta. [4] Tämä tuo läpinäkvyyttä projektityölle ja sidosryhmille mahdollisuuden nähdä projektin edistymisvaiheet. Lisäksi kehitystiimi voi reagoida muutostoiveisiin nopeasti ja tämän avulla asiakas saa varmemmin juuri toivotun kaltaisen lopputuloksen.
 
@@ -171,11 +171,19 @@ Kuvassa 7 näkyy painike otsikolla "show additional information".
 
 Viimeisenä tehtävänä oli saada nämä uudet tiedot näkymään muuttujalistassa nätisti. Toteutuksen ideana oli, että muuttujalistassa tiedot näkyisivät muodossa ```[muuttujan nimi] [pienin raja-arvo] < [lukuarvo] < [ylin raja-arvo] | [status]```
 
-Muuten tuo suunnitelma olikin toimiva, mutta statuksia oli niin paljon erilaisia, että niitä ei saanut järkevästi laitettua muuttujalistaan niin, että se näyttäisi hyvältä myös käyttäjän silmälle. Muuttujalistassa on myös olemassa sellainen ominaisuus, että jos viet hiiren muuttujan kohdalle, niin muuttujan päälle ilmestyy pieni pop-up-ikkuna, mikä näyttää lisää olennaista dataa muuttujasta. Pienen pohdinnan jälkeen totesin, että on paras siirtää tuo status tieto tuonne pop-upin sisälle kaiken muun tiedon joukkoon.
+Muuten tuo suunnitelma olikin toimiva, mutta statuksia oli niin paljon erilaisia, että niitä ei saanut järkevästi laitettua muuttujalistaan niin, että se näyttäisi hyvältä myös käyttäjän silmälle. Muuttujalistassa on myös olemassa sellainen ominaisuus, että jos viet hiiren muuttujan kohdalle, niin muuttujan päälle ilmestyy pieni pop-up-ikkuna, mikä näyttää lisää olennaista dataa muuttujasta. Pienen pohdinnan jälkeen totesin, että on paras siirtää tuo status tieto pop-upin sisälle kaiken muun tiedon joukkoon.
 
 <img src="proview-variable-information.png"> Kuva 8
 
 Kuvassa 8 näkyy uusi muuttujalista, mihin on lisätty muuttujien raja-arvot ja kuvassa näkyy myös pop-up ikkuna, mihin on lisätty muuttujan status muodossa `Status: Initial`, missä Initial tarkoittaa itse muuttujan statusta.
+
+Sprintin katselmoinnissa kehittämässäni toteutuksessa todettiin, että muuttujalistan ulkoasu kaipaa vielä hiomista, mutta ohjelmalogiikka toimii juuri kuten pitääkin. Toiveena oli, että muuttujien raja-arvot saataisiin järkevästi omiin sarakkaeisiin, mikä tekisi listojen seuraamisesta hieman selkeämpää. Toteutuksen aikana käytin myös hieman aikaa muuttujalistan toteutukseen, mutta tulimme muun kehitystiimis kanssa siihen tulokseen, että toteutus vaatisi jo olemassaolevan koodin siivoamista ja siihen täytyisi käyttää liikaa aikaa, joten se jätettin tämän sprintin ulkopuolelle.
+
+## Yhteenveto
+
+Viimeisessä luvussa arvioin omaa työskentelyäni, kuinka tavoitteet saavutettiin ja analysoin lopputuloksia.
+
+
 
 ## Lähteet
 
