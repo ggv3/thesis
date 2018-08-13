@@ -80,7 +80,11 @@ Editorin zoomaustyökalun toiminnallisuus oli ongelmallinen. Työkalun zoomausno
 
 Oletuksena muuttujalistassa näkyy muuttujan nimi, arvo ja yksikkö. Toiveena oli, että muuttujalistaan saataisiin näkyviin myös muuttujan raja-arvot sekä status.
 
-## 1. Sprintti
+## Työskentely
+
+Tässä luvussa käyn läpi opinnäytetyön teknistä työkentelyä. Opinnäytetyötä toteutettiin Scrumia noudattaen ja minä olin mukana Scrum tiimissä, missä pidettiin kahden viikon sprinttejä joihin minä osallistuin kahtena päivänä viikossa.
+
+### 1. Sprintti
 
 Ensimmäisen sprintin suunnittelussa keskityttiin miettimään sidosryhmien kanssa opinnäytetyön laajuutta.
 Sprintin suunnittelussa myös päätettiin, että aiemmin mainitut kehityskohteet ovat vain minun työlistallani ja muut Scrum tiimin jäsenet eivät ota niitä omalle työlistalleen. Minulle annettiin vapaat kädet päättää, että missä järjestyksessä teen tarvitttavat työt.
@@ -99,7 +103,7 @@ Sprintin viimeiseksi tehtäväksi jäi ProView:ssa olevan ruudukko-ominaisuuden 
 
 Sprintin katselmoinnissa sidosryhmät tarkastelivat aikaan saatuja muutoksia, ja pääosin he olivat tyytyväisiä, mutta tuoteomistajalta tuli muutama korjauspyyntö. Komponenttien lisäyspainikkeiden kuvat haluttiin muuttaa, koska ne eivät sopineet yleiseen ulkoasuun muiden painikkeiden kanssa ja lisäksi uusi oletusresoluutio aiheutti sen, että uudet näytöt oli oletuksena zoomattu hieman liian lähelle. ProView:ssa on "sovita näyttöön" -toiminto erikseen, ja toiveena oli, että se tapahtuisi myös aina kun luodaan uusi näyttö. Muuten kaikkiin muihin muutoksiin oltiin tyytyväisiä.
 
-## 2. Sprintti
+### 2. Sprintti
 
 Toisen sprintin suunnittelu oli opinnäytetyön puitteissa melko lyhyt. Työskentely jatkui samalla suunnitelmalla kuin ensimmäisessä sprintissä. Minun työtehtäväni olivat ProView 1.1 kehityskohteet ja minulla oli vapaus valita missä järjestyksessä toteutin niitä.
 
@@ -111,7 +115,7 @@ Tarkoituksenani oli aloittaa "Mittauksen lasketun arvon automatisointi vielä to
 
 Sprintin katselmoinnissa esittelin tekemäni muutokset. Vaikka ne olivatkin melko vähäiset, niin sidosryhmät olivat tyytyväisiä. Uudet kuvat istuivat hyvin ProView-työkalun yleisilmeeseen ja näyttöjen kohdistaminen ilman ylimääräistä zoomausta toimi juuri kuten piti.
 
-## 3. Sprintti
+### 3. Sprintti
 
 Aloitin sprintin hieman haasteellisemmalla tehtävällä. Päätin aloittaa Mittauksen lasketun arvon automatisoinnin. Prosessinäyttöihin voidaan tosiaan lisätä muuttujia ja niille muuttujille voidaan tehdä myös hyvin paljon muutoksia. Muuttujia voidaan hakea useammasta eri tietokannasta ja joissain tietokannassa sijaitsee vain tietynlaisia muuttujia, mille täytyy aina asettaa erilaiset parametrit tapauksesta riippuen.
 
@@ -125,7 +129,7 @@ Zoomin korjaaminen osoittautui taas hieman erilaiseksi haasteeksi. ProView:n zoo
 
 Sprintin katselmoinnissa oltiin erittäin tyytyväisiä lopputuloksiin. Varsinkin zoomin korjaus on sellainen ominaisuus, minkä korjauksia oltiin odotettu jo pitkään. Sidosryhmät olivat nähneet sen toiminnallisuuden ongelmallisena lähes alusta lähtien. Lasketun arvon automatisointi oli myös toivottu uudistus ja sen toiminnallisuus vastasi sidosryhmien odotuksia.
 
-## 4. Sprintti
+### 4. Sprintti
 
 Neljännes sprintti keskittyi uusien SVG-elementtien lisäämiseen uuteen näyttöön. Halusin saada vesileiman ja otsikkokentän lisättyä uusiin näyttöihin.
 
@@ -143,7 +147,7 @@ Ehdin myös suunnitella datan lisäämistä muuttujalistoihin. Lähtöasetelma o
 
 Sprintin katselmointi meni samalla kaavalla kuin ennenkin. Toteutetut muutokset olivat mieluisia. Erityisesti tärkeitä huomioita olivat, että TOPi:n logoa ja otsikkokenttää voi halutessaan siirtää ja poistaa uudesta näytöstä.
 
-## 5. Sprintti
+### 5. Sprintti
 
 Opinnäytetyön piti alkuperäisen suunnitelman mukaan kestää neljä sprinttiä, mutta aikataulu suunniteltiin joustavaksi, että työskentelyä voitaisiin tarvittaessa jatkaa vielä yhden sprintin verran. Aiemmin mainittu sairastumiseni viivästytti hieman toteutusta, joten päätimme, että teen vielä yhden sprintin verran töitä, jonka jälkeen tarkastelemme tuloksia ja päätämme opinnäytetyön teknisen osuuden.
 
@@ -183,7 +187,21 @@ Sprintin katselmoinnissa kehittämässäni toteutuksessa todettiin, että muuttu
 
 Viimeisessä luvussa arvioin omaa työskentelyäni, kuinka tavoitteet saavutettiin ja analysoin lopputuloksia.
 
+Aloitin opinnäytetyön tekemisen käymällä eri kehityskohteet läpi toimeksiantajan kanssa ja valitsemalla niistä sopivan kokonaisuuden opinnäytetyölle. Mielestäni saimme kasattua sopivan paketin, missä oli erilaisia tehtäviä ja joiden haasteet vaihtelivat melko triviaaleista työtehtävistä erittäin haasteellisiin, minkä toiminnalliuuksien logiikkaan ja suunnitteluun täytyi oikeasti käyttää paljon ajatustyötä.
 
+Opinnäytetyöprojekti oli itsessään todella mielenkiintoinen. Olen aina ollut sitä mieltä, että on todella mielekästä työskennellä projektien kanssa, mitä ihmiset oikeasti käyttävät. Työskentelymotivaatio tehdä laadukasta ohjelmakoodia nousee korkeammalle, koska keskinkertaisista ratkaisuista kärsisivät myös muut käyttäjät. Nyt pääsin myös tutustumaan minulle täysin uusiin työskentelyalueeseen. Olen aiemminkin tehnyt ohjelmistoja, mutta työkokemukseni energia-alalla oli todella rajallinen, joten jouduin usein kysymään sidosryhmiltä, että mitkä on eri työtehtävien tausta, että kykenin tekemään toiminnallisuuksia mitkä vastaavat juuri heidän tarpeitaan.
+
+### Haasteet
+
+Opinnäytetyön suurimmat haasteet liittyivät ehdottomasti ympäristöön missä työskentelin. Energia-alan eri lainalaisuudet, termistöt ja monimuotoisuus yllätti minut kehityksen aikana. Esimerkiksi kaikki tieto mitä muuttujissa säilytetään ja niiden tarpeet ovat vieläkin minulle hieman mysteeri, mutta sain selvitettyä kaiken olennaisen, että pystyin suorittamaan työtehtäväni.
+
+SVG-Edit oli myös itsessään aika suuri haaste, vektorigrafiikka ja ja siihen liittyvä ohjelmisto oli minulle myös melko tuntematonta seutua, kun aloitin työskentelemään opinnäytetyön parissa. Kehityksessä oli myös se haaste, että SVG-Editin omaa ohjelmakoodia piti muokata mahdollisimman vähän, koska mahdolliset versiopäivitykset olisivat vaikeampia, jos SVG-Editin omassa koodissa olisi paljon meidän tekemiä muutoksia.
+
+Ja yksi mainittava haaste oli myös yksinkertaisesti se, että oikeassa työskentely-ympäristössä täytyy kiinnittää huomiota sellaisiin asioihin, mitkä ei ole niin suuressa roolissa henkilökohtaisissa projekteissa. Se missä harrasteprojektien tietokanta saattaa pitää sisällään muutamia tietokantatauluja, työskentely-ympäristöissä tietokannat voivat pitää sisällään useita satoja tietokantatauluja ja jokaisen sisällä voi olla myös useita satoja rivejä, joten tietokantahakuihin ja optimointiin täytyy kiinnittää huomiota. Lisäksi ohjelmakoodin täytyy noudattaa yhteisiä pelisääntöjä, jotta koodi pysyy yhtenäisenä ja ymmärrettävänä.
+
+Aikataulu myös odottautui haasteeksi. Alkuperäinen aikataulu oli mitoitettu niin, että työskentely kestäisi neljä sprinttiä, mutta sairastuminen venytti työaikaa vielä yhden sprintin verran. Tämä oli tosin huomioitu koko opinnäytetyöprojektin aikataulussa, joten opinnäytetyön tekninen osuus valmistui sinänsä ajallaan. Opinnäytetyön kirjallinen osuus taas valitettavasti venyi syksylle henkilökohtaisten haasteiden vuoksi.
+
+### Tavoitteiden saavuttaminen
 
 ## Lähteet
 
