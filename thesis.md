@@ -72,7 +72,7 @@ ProView:ssa on olemassa kirjasto erilaisia visuaalisia komponentteja, ne voi kuv
 
 Lasketut arvot merkitään prosessinäyttöihin eri tavalla. Aiemmin tapana oli tehdä niin, että jos muuttujan arvo oli laskettu, niin se muutettiin käsin oikeannäköiseksi. Tarkoituksena oli automatisoida niin, että sovellus kykenee itse päättelemään, että onko arvo laskettu ja jos on, niin muutetaan sen ulkoasu automaattisesti oikeanlaiseksi.
 
-### Zoomaustyökalun käytettvyyden helpottaminen
+### Zoomaustyökalun käytettävyyden helpottaminen
 
 Editorin zoomaustyökalun toiminnallisuus oli ongelmallinen. Työkalun zoomausnopeus oli liian nopea eikä se kohdistunut kunnolla. Ehdotettu korjaus oli, että työkalu rekisteröisi yhden rullaliikkeen sekunnissa, joten silloin zoomaus ei olisi liian nopea.
 
@@ -202,6 +202,12 @@ Ja yksi mainittava haaste oli myös yksinkertaisesti se, että oikeassa työsken
 Aikataulu myös odottautui haasteeksi. Alkuperäinen aikataulu oli mitoitettu niin, että työskentely kestäisi neljä sprinttiä, mutta sairastuminen venytti työaikaa vielä yhden sprintin verran. Tämä oli tosin huomioitu koko opinnäytetyöprojektin aikataulussa, joten opinnäytetyön tekninen osuus valmistui sinänsä ajallaan. Opinnäytetyön kirjallinen osuus taas valitettavasti venyi syksylle henkilökohtaisten haasteiden vuoksi.
 
 ### Tavoitteiden saavuttaminen
+
+Opinnäytetyöhön valittiin kymmenen kehityskohdetta joista saatiin toteutettua yhdeksän. Ainoa asia jota ei toteutettu, oli kirjastokomponenttien yhtenäistäminen. Tämäkin jäi tekemättä lähinnä siksi, että samaan aikaan eräs toinen kollega samasta scrum tiimistä toteutti ominaisuutta, mikä olisi pienentänyt komponenttien määrää tuntuvasti. Kirjastokomponenteissa voi esimerkiksi olla samasta pumpusta kolme eri versiota, missä ainoa eroavaisuus on pumpun väri. Tämä ominaisuus olisi tehnyt mahdolliseksi sen, että kirjastokomponenttina olisi vain yksi pumpppu ja sitä asettaessa käyttäjä saisi valita itse pumppuun värin. Tämä toteutus venyi sitten sen verran pitkälle, että kirjastokomponentteja ei kannattanut alkaa yhtenäistämään tämän opinnäytetyön puitteissa. Käytännössä siis sain toteutettua kaikki kehityskohteet, mitkä pystyin. Mielestäni saavutin siis tavoitteet toimeksiantajan vaatimusten mukaan.
+
+Oman oppimisen tavoitteet tuli myös mielestäni saavutettua. Vaikka osa työtehtävistä olikin melko triviaaleja haastavuudeltaan, niin esimerkiski suorituskykyyn liittyvät tehtävät, missä täytyi miettiä useamman AJAX-kutsun mahdollisia asynkronisia ongelmia, olivat oikeasti haasteellisia ja niiden pohtiminen oli todella mielenkiintoista!
+
+Kävin myös opinnäytetyön teknisen osuuden jälkeen keskustelua projektin tuoteomistajan kanssa, koska halusin tietää, että mitä mieltä loppukäyttäjät olivat töistäni. Parannustyöt ovat kuulemma todella hyödyllisiä uusia käyttäjiä ajatellen, koska esimerkiksi uusi oletusresoluutio ja ruudukko-ominaisuus helpottavat uusien näyttöjen piirtämistä huomattavasti. Visuaalisten komponenttien lisäyspainikkeiden (muuttuja, muuttujalista, taulukko, graafi) uudelleensijoittelu vuorostaan helpottaa ongelmaa mikä Suomenojalla havaittiin, eli käyttäjät ovat lisänneet trendejä näyttöön ns. "kikkaillen", koska siihen löytyvää valmista toiminnallisuutta ei ole yksinkertaisesti löydetty. Pikanäppäin-painike tuo taas kaikille käyttäjille helpotusta työntekoon, koska sen avulla pikanäppäimet saa eri toiminnallisuuksille saa palautettua helposti mieleen. Otsikkokenttä on myös kätevä, koska näyttöihin on kuitenkin ollut tapana lisätä aina otsikko käytettävyyden helpottamiseksi. Nyt kun sitä saatiin hieman automatisoitua, niin sen avulla voidaan hieman ehkäistä tilannetta, missä otsikkokentän lisääminen unohtuu ja yleinen käytettävyys helpottuu. Muuttujalistan raja-arvojen toimivuudesta ei valitettavasti ollut vielä laajempaa käyttäjäpalautetta, koska ominaisuutta ei ilmeisesti ole vielä laitettu asiakkaille asti testattavaksi. Vesileima on taas myynti- ja markkinointiponnistelujen kannalta hyödyllinen ominaisuus, koska sen avulla TOPi-nimi tulee paremmin esiin!
 
 ## Lähteet
 
