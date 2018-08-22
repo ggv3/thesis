@@ -82,7 +82,11 @@ Oletuksena muuttujalistassa näkyy muuttujan nimi, arvo ja yksikkö. Toiveena ol
 
 ## Työskentely
 
-Tässä luvussa käyn läpi opinnäytetyön teknistä työkentelyä. Opinnäytetyötä toteutettiin Scrumia noudattaen ja minä olin mukana Scrum tiimissä, missä pidettiin kahden viikon sprinttejä joihin minä osallistuin kahtena päivänä viikossa.
+Tässä luvussa käyn läpi työssä käytettyä kehitys- ja testiympäristöä ja opinnäytetyön teknistä työkentelyä. Opinnäytetyötä toteutettiin Scrumia noudattaen ja minä olin mukana Scrum tiimissä, missä pidettiin kahden viikon sprinttejä joihin minä osallistuin kahtena päivänä viikossa.
+
+### Kehitysympäristö
+
+TOPi-tuote on tehty Javalla Spring ohjelmointikehystä käyttäen ja sen takia kehitys tapahtuu Spring Tool Suitella, joka on Eclipsen päälle rakennettu kehitystyökalu. Versionhallintaan käytimme Gittiä ja uusi ohjelmakoodi siirrettiin meidän omilla palvelimilla toimivaan Gitlab-versionhallintaympäristöön. Tämän lisäksi meillä oli käytössä myös oma CI (Continuous integration) eli jatkuvan integroinnin putki. Käytännössä tämä tarkoittaa siis sitä, että palvelimelle oli asennettu Jenkins-niminen jatkuvan integraation ohjelma, joka tarkistaa tasaisin väliajoin, että onko versionhallintaan tuotu uusia muutoksia. Mikäli on, niin silloin Jenkins ajaa ohjelmakoodiin kirjoitetut testitapaukset läpi ja sitä kautta varmistaa, että ohjelmisto toimii juuri kuten pitää. Mikäli testeissä ei havaita ongelmia, niin sitten ohjelmistosta rakennetaan paketti, joka laitetaan automaattisesti käyttöön testipalvelimelle. Tämä mahdollistaa sen, että uudet muutokset ovat testattavissa lähes heti sen jälkeen, kun ne on siirretty versionhallintaan. Etu tässä on se, että useat eri sidosryhmät pääset testaamaan uusia ominaisuuksia nopeasti itse, eivätkä he joudu luottamaan vain sprintin katselmoinnissa esiteltyihin tuloksiin.
 
 ### 1. Sprintti
 
