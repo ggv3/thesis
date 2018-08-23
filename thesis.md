@@ -16,6 +16,17 @@ Työn tavoitteena oli jatkokehittää Kristian Laakkosen diplomityönä valmistu
 
 Opinnäytetyössä ei toteuteta uutta sovellusta, eikä uusia toiminnallisuuksia olemassa olevaan sovellukseen. Tarkoituksena on tutkia jo olemassa olevia ratkaisuja ja parannella niitä käyttäjäpalautteiden pohjalta. Opinnäytetyössä kerrotaan parannusehdotusten taustat, miksi ne halutaan ja niiden kehityskulku. Opinnäytetyössa ei keskitytä kertomaan verkkosivuista ja niiden toimintaperiaatteista yleisellä tasolla, koska niistä aiheista löytyy materiaalia internetistä jo valmiiksi, enkä usko niiden tuovan lisäarvoa tälle opinnäytetölle. Pidän itseäni ohjelmistokehittäjänä, enkä graafisena suunnittelijana, joten prioriteettini on tehdä laadukasta ja toimivaa ohjelmakoodia ja kehityskohteiden graafinen ulkoasu ei ole toteutuksen kärkipäässä.
 
+## Tiedonsiirto
+
+Tässä luvussa avataan erilaisia tiedonsiirtotekniikoita, joiden käyttämistä käsitellään opinnäytetyössä. Tiedonsiirrolla tarkoitetaan sitä prosessia millä käyttäjän syöttämä data siirretään esimerkiksi tietokantaan tai miten käyttäjän hakema data palautetaan tietokannasta verkkosivulle.
+
+### Ajax
+
+Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologioita, mitkä mahdollistavat tiedonsiirron selaimen ja palvelimen välillä dynaamisesti niin, että sivua ei tarvitse ladata aina uudelleen. Aikaisemmin tiedonsiirto tapahtui käyttäjän kannalta paljon rasittavammalla tavalla, sillä ennen pienikin muutos vaati sitä, että koko sivu ladattiin uudelleen. Ajax mahdollistaa asynkronisen tiedonsiirron, minkä avulla käyttäjän ei tarvitse katsella tyhjää ruutua sillä välin kun selain pyytää palvelimelta uutta dataa. (Garret, 2005)
+
+<img src="/proview-ajax.png"> Kuva 1
+Kuvassa 1 vasemmalla puolella näkyy "perinteinen" tiedonsiirtomalli, missä jokainen pyyntö palvelimalta pakottaa lataamaan koko sivun uudelleen. Kuvan oikealla puolella taas näkyy AJAXin tiedonsiirtomali, missä verkkosivuun upotettu "Ajax engine" hoitaa tiedonsiirron palvelimen ja selaimen välillä niin, että käyttäjän ei tarvitse ladata sivua uudelleen jokaisen pyynnön yhteydessä.
+
 ## Scrum
 
 Scrum on ketterän projektityön viitekehys, minkä tarkoitus on tehdä monimutkaisesta projektityöstä mahdollisimman sujuvaa ja läpinäkyvää kaikille sidosryhmille. (What is Scrum?) Scrumissa työskentely aloitetaan niin, että Tuoteomistaja, joka on yksi Scrumin rooleista (Scrum Roles Demystified), luo priorisoidun kehitysjonon halutuista kehityskohteista. Seuraava vaihe on Sprintin suunnittelu, missä kehitystiimi valitsee seuraavaan sprinttiin kehityskohteet priorisoidun listan mukaan.
@@ -33,7 +44,7 @@ Kuvassa 1 näkyy prosessinäyttö, jossa on esitetty voimalaitoksen suorituskyvy
 
 ProView:n prosessinäytöissä on staattisia ja muuttuvia elementtejä. Staattisilla elementeillä kuvataan yleensä eri prosessien yleinen kulku ja ns. isompi kokonaisuus. Muuttuvat elementit ovat prosessin sisällä olevat muuttujat, mitkä näyttävät erilaisia arvoja. Nämä arvot voivat olla esimerkiksi erilaisten pumppujen lämpötilat ym. prosessille tärkeät tiedot. ProView:n näyttöjä pidetään laitosten valvomoilla auki jatkuvasti ja on tarkoitus, että näiden näyttöjen perusteella voidaan tarkastella voimalaitosten eri prosesseja lähes reaaliaikaisesti. Tämän takia tietojärjestelmän täytyy hakea muuttujien arvoja tietokannasta tasaisin väliajoin.
 
-Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) (Laakkonen 2015a, 35; Laakkonen 2015b, 55; Laakkonen 2015c,32; Laakkonen 2015d, 55)
+Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) (Laakkonen 2015a, 35; Laakkonen 2015b, 55; Laakkonen 2015c, 32; Laakkonen 2015d, 55)
 
 ## Kehityskohteet
 
@@ -217,6 +228,8 @@ Oman oppimisen tavoitteet tuli myös mielestäni saavutettua. Vaikka osa työteh
 Kävin myös opinnäytetyön teknisen osuuden jälkeen keskustelua projektin tuoteomistajan kanssa, koska halusin tietää, että mitä mieltä loppukäyttäjät olivat töistäni. Parannustyöt ovat kuulemma todella hyödyllisiä uusia käyttäjiä ajatellen, koska esimerkiksi uusi oletusresoluutio ja ruudukko-ominaisuus helpottavat uusien näyttöjen piirtämistä huomattavasti. Visuaalisten komponenttien lisäyspainikkeiden (muuttuja, muuttujalista, taulukko, graafi) uudelleensijoittelu vuorostaan helpottaa ongelmaa mikä Suomenojalla havaittiin, eli käyttäjät ovat lisänneet trendejä näyttöön ns. "kikkaillen", koska siihen löytyvää valmista toiminnallisuutta ei ole yksinkertaisesti löydetty. Pikanäppäin-painike tuo taas kaikille käyttäjille helpotusta työntekoon, koska sen avulla pikanäppäimet saa eri toiminnallisuuksille saa palautettua helposti mieleen. Otsikkokenttä on myös kätevä, koska näyttöihin on kuitenkin ollut tapana lisätä aina otsikko käytettävyyden helpottamiseksi. Nyt kun sitä saatiin hieman automatisoitua, niin sen avulla voidaan hieman ehkäistä tilannetta, missä otsikkokentän lisääminen unohtuu ja yleinen käytettävyys helpottuu. Muuttujalistan raja-arvojen toimivuudesta ei valitettavasti ollut vielä laajempaa käyttäjäpalautetta, koska ominaisuutta ei ilmeisesti ole vielä laitettu asiakkaille asti testattavaksi. Vesileima on taas myynti- ja markkinointiponnistelujen kannalta hyödyllinen ominaisuus, koska sen avulla TOPi-nimi tulee paremmin esiin!
 
 ## Lähteet
+
+Garret, 2005, Ajax: A New Approach to Web Applications Luettavissa: https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf. Luettu: 23.08.2018
 
 What is Scrum? Luettavissa: https://www.scrum.org/resources/what-is-scrum. Luettu: 12.04.2018
 
