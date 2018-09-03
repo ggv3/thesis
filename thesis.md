@@ -1,6 +1,6 @@
 # Voimalaitosdatan visualisointityökalun jatkokehitys
 
-## Johdanto
+## 1. Johdanto
 
 Kristian Laakkonen toteutti diplomityönään selainpohjaisen ProView-nimisen tietojärjestelmän, jonka avulla voidaan havainnollistaa prosessitietoja käyttäjäystävällisesti. Tietojärjestelmässä voidaan luoda käyttäjille helppolukuisia prosessikaavionäyttöjä.
 
@@ -8,19 +8,19 @@ Järjestelmä tehtiin, koska aikaisemmissa työpöytäsovelluksissa on ollut oma
 
 Opinnäytetyöni käsittelee näitä parannusehdotuksia ja niiden toteuttamista. Tarkoituksena on toteuttaa versiopäivitys ProView 1.0:sta versioon ProView 1.1. Toimeksiantajana toimii Fortum Power and Heat Oyj. Parannusehdotusten toteuttaminen tekee tietojärjestelmästä enemmän asiakkaiden toiveiden mukaisen ja sitä kautta se tuo myös lisäarvoa toimeksiantajalleni.
 
-## Tavoitteet
+## 1.1  Tavoitteet
 
 Työn tavoitteena oli jatkokehittää Kristian Laakkosen diplomityönä valmistunutta järjestelmää käyttäjäpalautteiden pohjalta ja sen avulla kasvattaa omaa osaamistani. Parannusehdotuksien suunnittelussa ja toteutuksessa joudun kiinnittämään huomiota minulle uusiin asioihin ohjelmistokehityksessä ja pääsen tutustumaan energia-alan lainalaisuuksiin. Työn suurimmat haasteet tulevat olemaan olemassaolevan ProView-työkalun ohjelmakoodin tulkinta ja siinä käytettyjen ratkaisujen ymmärtäminen. Projektissa on myös käytetty minulle tuntemattomia JavaScript-kirjastoja, joten myös niiden ymmärtäminen tulee olemaan oma haasteensa. Korostan myös sitä, että minulle energia-ala ja sen lainalaisuudet ovat lähes tuntemattomia, joten tarkoituksena on myös ymmärtää, että miksi toivottuja muutoksia tehdään ja mikä niiden merkitys on.
 
-## Rajaus
+## 1.3 Rajaus
 
 Opinnäytetyössä ei toteuteta uutta sovellusta, eikä uusia toiminnallisuuksia olemassa olevaan sovellukseen. Tarkoituksena on tutkia jo olemassa olevia ratkaisuja ja parannella niitä käyttäjäpalautteiden pohjalta. Opinnäytetyössä kerrotaan parannusehdotusten taustat, miksi ne halutaan ja niiden kehityskulku. Opinnäytetyössa ei keskitytä kertomaan verkkosivuista ja niiden toimintaperiaatteista yleisellä tasolla, koska niistä aiheista löytyy materiaalia internetistä jo valmiiksi, enkä usko niiden tuovan lisäarvoa tälle opinnäytetölle. Pidän itseäni ohjelmistokehittäjänä, enkä graafisena suunnittelijana, joten prioriteettini on tehdä laadukasta ja toimivaa ohjelmakoodia ja kehityskohteiden graafinen ulkoasu ei ole toteutuksen kärkipäässä.
 
-## Tiedonsiirto
+## 2. Tiedonsiirto
 
 Tässä luvussa avataan erilaisia tiedonsiirtotekniikoita, joiden käyttämistä käsitellään opinnäytetyössä. Tiedonsiirrolla tarkoitetaan sitä prosessia millä käyttäjän syöttämä data siirretään esimerkiksi tietokantaan tai miten käyttäjän hakema data palautetaan tietokannasta verkkosivulle.
 
-### Ajax
+### 2.1 Ajax
 
 Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologioita, mitkä mahdollistavat tiedonsiirron selaimen ja palvelimen välillä dynaamisesti niin, että sivua ei tarvitse ladata aina uudelleen. Aikaisemmin tiedonsiirto tapahtui käyttäjän kannalta paljon rasittavammalla tavalla, sillä ennen pienikin muutos vaati sitä, että koko sivu ladattiin uudelleen. Ajax mahdollistaa asynkronisen tiedonsiirron, minkä avulla käyttäjän ei tarvitse katsella tyhjää ruutua sillä välin kun selain pyytää palvelimelta uutta dataa. (Garret 2005)
 
@@ -28,7 +28,7 @@ Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologi
 
 Kuvassa 1 vasemmalla puolella näkyy "perinteinen" tiedonsiirtomalli, missä jokainen pyyntö palvelimalta pakottaa lataamaan koko sivun uudelleen. Kuvan oikealla puolella taas näkyy AJAXin tiedonsiirtomali, missä verkkosivuun upotettu "Ajax engine" hoitaa tiedonsiirron palvelimen ja selaimen välillä niin, että käyttäjän ei tarvitse ladata sivua uudelleen jokaisen pyynnön yhteydessä.
 
-### WebSocket
+### 2.2 WebSocket
 
 WebSocket-protokolla eroaa Ajaxista hieman. Ajax-kutsut tapahtuu niin, että jokaisen kutsun jälkeen avataan yhteys palvelimeen ja datan siirtämisen jälkeen yhteys suljetaan. Jos pyyntöjä tehdään paljon lyhyessä ajassa, niin se kuormittaa palvelinta, jos yhteyksiä joudutaan avaamaan ja sulkemaan jatkuvasti. WebSocketin tarkoituksena on avata yhteys kerran ja mahdollistaa useita tiedonsiirtopyyntöjä saman yhteyden aikana. (The WebSocket Protocol 2011)
 
@@ -36,7 +36,7 @@ WebSocket-protokolla eroaa Ajaxista hieman. Ajax-kutsut tapahtuu niin, että jok
 
 Kuvassa 2 näkyy WebSocketin tiedonsiirtomalli, missä näkyy kuinka auki olevan yhteyden yli voidaan siirtää tietoa useaan kertaan.
 
-## Scrum
+## 3. Scrum
 
 Scrum on ketterän projektityön viitekehys, minkä tarkoitus on tehdä monimutkaisesta projektityöstä mahdollisimman sujuvaa ja läpinäkyvää kaikille sidosryhmille. (What is Scrum?) Scrumissa työskentely aloitetaan niin, että Tuoteomistaja, joka on yksi Scrumin rooleista (Scrum Roles Demystified), luo priorisoidun kehitysjonon halutuista kehityskohteista. Seuraava vaihe on Sprintin suunnittelu, missä kehitystiimi valitsee seuraavaan sprinttiin kehityskohteet priorisoidun listan mukaan.
 
@@ -44,7 +44,7 @@ Sprintit ovat yleensä lyhyitä työjaksoja, missä kehitysryhmä keskittyy työ
 
 Opinnäytetyön aikana olin osana Scrum tiimiä, missä minä itse keskityin ProView 1.1 kehitykseen ja muut kehitystiimin jäsenet tekivät omia töitään saman sovelluskokonaisuuden parissa. Sidosryhmiin kuului ProView-työkalun käyttäjiä, joilta sain kehityksen aikana hyvää palautetta toteutuksistani ja kykenin yleensä myös reagoimaan niihin nopeasti. Ketterä kehitys ja Scrum toimi siis omalta osaltani loistavasti tämän projektin puitteissa.
 
-## Vektorigrafiikka
+## 4. Vektorigrafiikka
 
 Digitaalisissa kuvat on yleensä jaettu kahteen eri kategoriaan, bittikarttakuviin ja vektorigrafiikkakuviin. Bittikarttakuvat koostuvat pikseleistä ja pikseleiden määrä riippuu kuvatiedoston määritetystä resoluutiosta, eli pikselitiheydestä. Mitä suurempi resoluutio, sitä tarkempi kuva ja samalla suurempi tiedostokoko. Ongelmana tällaisissa kuvissa on skaalautuvuus. Bittikarttakuvaa voidaan suurentaa, mutta sen resoluutio ei päivity samassa suhteessa, eli silloin myös pikselimäärät pysyy samana. Lopputuloksena on yleensä huomattavasti epätarkempi kuva. (Kerminen 2009a, 2)
 
@@ -52,7 +52,7 @@ Vektorigrafiikkakuvat eroavat bittikarttakuvista rakenteeltaan huomattavasti. Ve
 
 ProView-työkalulla tehdyt prosessikaavionäytöt koostuvat yleensä useista yksinkertaisista kuvioista ja niiden täytyy skaalautua tarvittaessa sekä normaalilla työpöydällä olevaan Full HD-resoluutioon ja voimalaitoksilla oleviin todella isoihin valvomonäyttöihin ja niiden laatu ei saa kärsiä. Tämän takia ProView:lla tehdyt prosessikaavionäytöt tallennetaan selaimissa toimiviksi SVG-tiedostoiksi.
 
-## ProView 1.0
+## 5. ProView 1.0
 
 ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. (SVG-Edit) Järjestelmä on osa Fortumin TOPi-tuoteperhettä (TOPi Energiatiedon hallintajärjestelmä) TOPi siis kokonaisuudessaan yksi iso web-sovellus, mikä on jaettu pienempiin alisovelluksiin kuten ProView-työkalu. TOPi:n backend on ohjelmoitu Javalla Spring-ohjelmointikehystä käyttäen (Spring) ja järjestelmän frontendissä on pääasiassa käytetty Dojo-nimistä ohjelmointikirjastoa. (Dojo Toolkit) ProView-työkalulla on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuksia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi.
 
@@ -64,7 +64,7 @@ ProView:n prosessinäytöissä on staattisia ja muuttuvia elementtejä. Staattis
 
 Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) (Laakkonen 2015a, 35; Laakkonen 2015b, 55; Laakkonen 2015c, 32; Laakkonen 2015d, 55)
 
-## Kehityskohteet
+## 6. Kehityskohteet
 
 Valitsimme ProView:n tuoteomistajan kanssa opinnäytetyölle kymmenen eri kehityskohdetta. Työskentely kehityskohteiden kanssa tapahtui Scrumin mukaisesti. Työskentelin niiden kanssa osa-aikaisesti kahden viikon sprinteissä ja työ todettiin valmiiksi, jos Sprintin katselmoinnissa ei löytynyt mitään valitettavaa.
 
@@ -112,15 +112,15 @@ Editorin zoomaustyökalun toiminnallisuus oli ongelmallinen. Työkalun zoomausno
 
 Oletuksena muuttujalistassa näkyy muuttujan nimi, arvo ja yksikkö. Toiveena oli, että muuttujalistaan saataisiin näkyviin myös muuttujan raja-arvot sekä status.
 
-## Työskentely
+## 7. Työskentely
 
 Tässä luvussa käyn läpi työssä käytettyä kehitys- ja testiympäristöä ja opinnäytetyön teknistä työkentelyä. Opinnäytetyötä toteutettiin Scrumia noudattaen ja minä olin mukana Scrum tiimissä, missä pidettiin kahden viikon sprinttejä joihin minä osallistuin kahtena päivänä viikossa.
 
-### Kehitysympäristö
+## 7.1 Kehitysympäristö
 
 TOPi-tuote on tehty Javalla Spring ohjelmointikehystä käyttäen ja sen takia kehitys tapahtuu Spring Tool Suitella, joka on Eclipsen päälle rakennettu kehitystyökalu. Versionhallintaan käytimme Gittiä ja uusi ohjelmakoodi siirrettiin meidän omilla palvelimilla toimivaan Gitlab-versionhallintaympäristöön. Tämän lisäksi meillä oli käytössä myös oma CI (Continuous integration) eli jatkuvan integroinnin putki. Käytännössä tämä tarkoittaa siis sitä, että palvelimelle oli asennettu Jenkins-niminen jatkuvan integraation ohjelma, joka tarkistaa tasaisin väliajoin, että onko versionhallintaan tuotu uusia muutoksia. Mikäli on, niin silloin Jenkins ajaa ohjelmakoodiin kirjoitetut testitapaukset läpi ja sitä kautta varmistaa, että ohjelmisto toimii juuri kuten pitää. Mikäli testeissä ei havaita ongelmia, niin sitten ohjelmistosta rakennetaan paketti, joka laitetaan automaattisesti käyttöön testipalvelimelle. Tämä mahdollistaa sen, että uudet muutokset ovat testattavissa lähes heti sen jälkeen, kun ne on siirretty versionhallintaan. Etu tässä on se, että useat eri sidosryhmät pääset testaamaan uusia ominaisuuksia nopeasti itse, eivätkä he joudu luottamaan vain sprintin katselmoinnissa esiteltyihin tuloksiin.
 
-### 1. Sprintti
+### 7.2 1. Sprintti
 
 Ensimmäisen sprintin suunnittelussa keskityttiin miettimään sidosryhmien kanssa opinnäytetyön laajuutta.
 Sprintin suunnittelussa myös päätettiin, että aiemmin mainitut kehityskohteet ovat vain minun työlistallani ja muut Scrum tiimin jäsenet eivät ota niitä omalle työlistalleen. Minulle annettiin vapaat kädet päättää, että missä järjestyksessä teen tarvitttavat työt.
@@ -139,7 +139,7 @@ Sprintin viimeiseksi tehtäväksi jäi ProView:ssa olevan ruudukko-ominaisuuden 
 
 Sprintin katselmoinnissa sidosryhmät tarkastelivat aikaan saatuja muutoksia, ja pääosin he olivat tyytyväisiä, mutta tuoteomistajalta tuli muutama korjauspyyntö. Komponenttien lisäyspainikkeiden kuvat haluttiin muuttaa, koska ne eivät sopineet yleiseen ulkoasuun muiden painikkeiden kanssa ja lisäksi uusi oletusresoluutio aiheutti sen, että uudet näytöt oli oletuksena zoomattu hieman liian lähelle. ProView:ssa on "sovita näyttöön" -toiminto erikseen, ja toiveena oli, että se tapahtuisi myös aina kun luodaan uusi näyttö. Muuten kaikkiin muihin muutoksiin oltiin tyytyväisiä.
 
-### 2. Sprintti
+### 7.3 2. Sprintti
 
 Toisen sprintin suunnittelu oli opinnäytetyön puitteissa melko lyhyt. Työskentely jatkui samalla suunnitelmalla kuin ensimmäisessä sprintissä. Minun työtehtäväni olivat ProView 1.1 kehityskohteet ja minulla oli vapaus valita missä järjestyksessä toteutin niitä.
 
@@ -151,7 +151,7 @@ Tarkoituksenani oli aloittaa "Mittauksen lasketun arvon automatisointi vielä to
 
 Sprintin katselmoinnissa esittelin tekemäni muutokset. Vaikka ne olivatkin melko vähäiset, niin sidosryhmät olivat tyytyväisiä. Uudet kuvat istuivat hyvin ProView-työkalun yleisilmeeseen ja näyttöjen kohdistaminen ilman ylimääräistä zoomausta toimi juuri kuten piti.
 
-### 3. Sprintti
+### 7.4 3. Sprintti
 
 Aloitin sprintin hieman haasteellisemmalla tehtävällä. Päätin aloittaa Mittauksen lasketun arvon automatisoinnin. Prosessinäyttöihin voidaan tosiaan lisätä muuttujia ja niille muuttujille voidaan tehdä myös hyvin paljon muutoksia. Muuttujia voidaan hakea useammasta eri tietokannasta ja joissain tietokannassa sijaitsee vain tietynlaisia muuttujia, mille täytyy aina asettaa erilaiset parametrit tapauksesta riippuen.
 
@@ -165,7 +165,7 @@ Zoomin korjaaminen osoittautui taas hieman erilaiseksi haasteeksi. ProView:n zoo
 
 Sprintin katselmoinnissa oltiin erittäin tyytyväisiä lopputuloksiin. Varsinkin zoomin korjaus on sellainen ominaisuus, minkä korjauksia oltiin odotettu jo pitkään. Sidosryhmät olivat nähneet sen toiminnallisuuden ongelmallisena lähes alusta lähtien. Lasketun arvon automatisointi oli myös toivottu uudistus ja sen toiminnallisuus vastasi sidosryhmien odotuksia.
 
-### 4. Sprintti
+### 7.5 4. Sprintti
 
 Neljännes sprintti keskittyi uusien SVG-elementtien lisäämiseen uuteen näyttöön. Halusin saada vesileiman ja otsikkokentän lisättyä uusiin näyttöihin.
 
@@ -183,7 +183,7 @@ Ehdin myös suunnitella datan lisäämistä muuttujalistoihin. Lähtöasetelma o
 
 Sprintin katselmointi meni samalla kaavalla kuin ennenkin. Toteutetut muutokset olivat mieluisia. Erityisesti tärkeitä huomioita olivat, että TOPi:n logoa ja otsikkokenttää voi halutessaan siirtää ja poistaa uudesta näytöstä.
 
-### 5. Sprintti
+### 7.6 5. Sprintti
 
 Opinnäytetyön piti alkuperäisen suunnitelman mukaan kestää neljä sprinttiä, mutta aikataulu suunniteltiin joustavaksi, että työskentelyä voitaisiin tarvittaessa jatkaa vielä yhden sprintin verran. Aiemmin mainittu sairastumiseni viivästytti hieman toteutusta, joten päätimme, että teen vielä yhden sprintin verran töitä, jonka jälkeen tarkastelemme tuloksia ja päätämme opinnäytetyön teknisen osuuden.
 
@@ -219,7 +219,7 @@ Kuvassa 11 näkyy uusi muuttujalista, mihin on lisätty muuttujien raja-arvot ja
 
 Sprintin katselmoinnissa kehittämässäni toteutuksessa todettiin, että muuttujalistan ulkoasu kaipaa vielä hiomista, mutta ohjelmalogiikka toimii juuri kuten pitääkin. Toiveena oli, että muuttujien raja-arvot saataisiin järkevästi omiin sarakkaeisiin, mikä tekisi listojen seuraamisesta hieman selkeämpää. Toteutuksen aikana käytin myös hieman aikaa muuttujalistan toteutukseen, mutta tulimme muun kehitystiimis kanssa siihen tulokseen, että toteutus vaatisi jo olemassaolevan koodin siivoamista ja siihen täytyisi käyttää liikaa aikaa, joten se jätettin tämän sprintin ulkopuolelle.
 
-## Yhteenveto
+## 8. Yhteenveto
 
 Viimeisessä luvussa arvioin omaa työskentelyäni, kuinka tavoitteet saavutettiin ja analysoin lopputuloksia.
 
@@ -227,7 +227,7 @@ Aloitin opinnäytetyön tekemisen käymällä eri kehityskohteet läpi toimeksia
 
 Opinnäytetyöprojekti oli itsessään todella mielenkiintoinen. Olen aina ollut sitä mieltä, että on todella mielekästä työskennellä projektien kanssa, mitä ihmiset oikeasti käyttävät. Työskentelymotivaatio tehdä laadukasta ohjelmakoodia nousee korkeammalle, koska keskinkertaisista ratkaisuista kärsisivät myös muut käyttäjät. Nyt pääsin myös tutustumaan minulle täysin uusiin työskentelyalueeseen. Olen aiemminkin tehnyt ohjelmistoja, mutta työkokemukseni energia-alalla oli todella rajallinen, joten jouduin usein kysymään sidosryhmiltä, että mitkä on eri työtehtävien tausta, että kykenin tekemään toiminnallisuuksia mitkä vastaavat juuri heidän tarpeitaan.
 
-### Haasteet
+### 8.1 Haasteet
 
 Opinnäytetyön suurimmat haasteet liittyivät ehdottomasti ympäristöön missä työskentelin. Energia-alan eri lainalaisuudet, termistöt ja monimuotoisuus yllätti minut kehityksen aikana. Esimerkiksi kaikki tieto mitä muuttujissa säilytetään ja niiden tarpeet ovat vieläkin minulle hieman mysteeri, mutta sain selvitettyä kaiken olennaisen, että pystyin suorittamaan työtehtäväni.
 
@@ -237,7 +237,7 @@ Ja yksi mainittava haaste oli myös yksinkertaisesti se, että oikeassa työsken
 
 Aikataulu myös odottautui haasteeksi. Alkuperäinen aikataulu oli mitoitettu niin, että työskentely kestäisi neljä sprinttiä, mutta sairastuminen venytti työaikaa vielä yhden sprintin verran. Tämä oli tosin huomioitu koko opinnäytetyöprojektin aikataulussa, joten opinnäytetyön tekninen osuus valmistui sinänsä ajallaan. Opinnäytetyön kirjallinen osuus taas valitettavasti venyi syksylle henkilökohtaisten haasteiden vuoksi.
 
-### Tavoitteiden saavuttaminen
+### 8.2 Tavoitteiden saavuttaminen
 
 Opinnäytetyöhön valittiin kymmenen kehityskohdetta joista saatiin toteutettua yhdeksän. Ainoa asia jota ei toteutettu, oli kirjastokomponenttien yhtenäistäminen. Tämäkin jäi tekemättä lähinnä siksi, että samaan aikaan eräs toinen kollega samasta scrum tiimistä toteutti ominaisuutta, mikä olisi pienentänyt komponenttien määrää tuntuvasti. Kirjastokomponenteissa voi esimerkiksi olla samasta pumpusta kolme eri versiota, missä ainoa eroavaisuus on pumpun väri. Tämä ominaisuus olisi tehnyt mahdolliseksi sen, että kirjastokomponenttina olisi vain yksi pumpppu ja sitä asettaessa käyttäjä saisi valita itse pumppuun värin. Tämä toteutus venyi sitten sen verran pitkälle, että kirjastokomponentteja ei kannattanut alkaa yhtenäistämään tämän opinnäytetyön puitteissa. Käytännössä siis sain toteutettua kaikki kehityskohteet, mitkä pystyin. Mielestäni saavutin siis tavoitteet toimeksiantajan vaatimusten mukaan.
 
