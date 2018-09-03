@@ -26,7 +26,7 @@ Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologi
 
 <img src="proview-ajax.png"> Kuva 1
 
-Kuvassa 1 vasemmalla puolella näkyy "perinteinen" tiedonsiirtomalli, missä jokainen pyyntö palvelimalta pakottaa lataamaan koko sivun uudelleen. Kuvan oikealla puolella taas näkyy AJAXin tiedonsiirtomali, missä verkkosivuun upotettu "Ajax engine" hoitaa tiedonsiirron palvelimen ja selaimen välillä niin, että käyttäjän ei tarvitse ladata sivua uudelleen jokaisen pyynnön yhteydessä.
+Kuvassa 1 vasemmalla puolella näkyy "perinteinen" tiedonsiirtomalli, missä jokainen pyyntö palvelimelta pakottaa lataamaan koko sivun uudelleen. Kuvan oikealla puolella taas näkyy AJAXin tiedonsiirtomali, missä verkkosivuun upotettu "Ajax engine" hoitaa tiedonsiirron palvelimen ja selaimen välillä niin, että käyttäjän ei tarvitse ladata sivua uudelleen jokaisen pyynnön yhteydessä.
 
 ### 2.2 WebSocket
 
@@ -46,15 +46,15 @@ Opinnäytetyön aikana olin osana Scrum tiimiä, missä minä itse keskityin Pro
 
 ## 4. Vektorigrafiikka
 
-Digitaalisissa kuvat on yleensä jaettu kahteen eri kategoriaan, bittikarttakuviin ja vektorigrafiikkakuviin. Bittikarttakuvat koostuvat pikseleistä ja pikseleiden määrä riippuu kuvatiedoston määritetystä resoluutiosta, eli pikselitiheydestä. Mitä suurempi resoluutio, sitä tarkempi kuva ja samalla suurempi tiedostokoko. Ongelmana tällaisissa kuvissa on skaalautuvuus. Bittikarttakuvaa voidaan suurentaa, mutta sen resoluutio ei päivity samassa suhteessa, eli silloin myös pikselimäärät pysyy samana. Lopputuloksena on yleensä huomattavasti epätarkempi kuva. (Kerminen 2009a, 2)
+Digitaaliset kuvat on yleensä jaettu kahteen eri kategoriaan, bittikarttakuviin ja vektorigrafiikkakuviin. Bittikarttakuvat koostuvat pikseleistä ja pikseleiden määrä riippuu kuvatiedoston määritetystä resoluutiosta, eli pikselitiheydestä. Mitä suurempi resoluutio, sitä tarkempi kuva ja samalla suurempi tiedostokoko. Ongelmana tällaisissa kuvissa on skaalautuvuus. Bittikarttakuvaa voidaan suurentaa, mutta sen resoluutio ei päivity samassa suhteessa, eli silloin myös pikselimäärät pysyy samana. Lopputuloksena on yleensä huomattavasti epätarkempi kuva. (Kerminen 2009a, 2)
 
 Vektorigrafiikkakuvat eroavat bittikarttakuvista rakenteeltaan huomattavasti. Vektorigrafiikkatiedostoissa ei määritellä yksittäisiä pikseleitä, vaan tiedostoon määritellään kuvissa olevien objektien koordinaatisto, kuvan ankkuripisteet ja objektien muodot määritellään matemaattisien funktioiden avulla. Tämän takia vektorigrafiikkakuvat ovat resoluutioriippumattomia ja ne skaalautuvat helposti eri kokotarkoiutksiin. (Kerminen 2009b, 4, Kerminen 2009c, 5)
 
-ProView-työkalulla tehdyt prosessikaavionäytöt koostuvat yleensä useista yksinkertaisista kuvioista ja niiden täytyy skaalautua tarvittaessa sekä normaalilla työpöydällä olevaan Full HD-resoluutioon ja voimalaitoksilla oleviin todella isoihin valvomonäyttöihin ja niiden laatu ei saa kärsiä. Tämän takia ProView:lla tehdyt prosessikaavionäytöt tallennetaan selaimissa toimiviksi SVG-tiedostoiksi.
+ProView-työkalulla tehdyt prosessikaavionäytöt koostuvat yleensä useista yksinkertaisista kuvioista ja niiden täytyy skaalautua tarvittaessa sekä normaaliin työpöytäkäytössä oleviin näyttöihin ja voimalaitoksilla oleviin todella isoihin valvomonäyttöihin ja niiden laatu ei saa kärsiä. Tämän takia ProView:lla tehdyt prosessikaavionäytöt tallennetaan selaimissa toimiviksi SVG-tiedostoiksi.
 
 ## 5. ProView 1.0
 
-ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. (SVG-Edit) Järjestelmä on osa Fortumin TOPi-tuoteperhettä (TOPi Energiatiedon hallintajärjestelmä) TOPi siis kokonaisuudessaan yksi iso web-sovellus, mikä on jaettu pienempiin alisovelluksiin kuten ProView-työkalu. TOPi:n backend on ohjelmoitu Javalla Spring-ohjelmointikehystä käyttäen (Spring) ja järjestelmän frontendissä on pääasiassa käytetty Dojo-nimistä ohjelmointikirjastoa. (Dojo Toolkit) ProView-työkalulla on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuksia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi.
+ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. (SVG-Edit) Järjestelmä on osa Fortumin TOPi-tuoteperhettä (TOPi Energiatiedon hallintajärjestelmä) TOPi on siis kokonaisuudessaan yksi iso web-sovellus, mikä on jaettu pienempiin alisovelluksiin kuten ProView-työkalu. TOPi:n backend on ohjelmoitu Javalla Spring-ohjelmointikehystä käyttäen (Spring) ja järjestelmän frontendissä on pääasiassa käytetty Dojo-nimistä ohjelmointikirjastoa. (Dojo Toolkit) ProView-työkalulla on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuksia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi.
 
 <img src="proview-process-view.png"> Kuva 3
 
@@ -118,7 +118,7 @@ Tässä luvussa käyn läpi työssä käytettyä kehitys- ja testiympäristöä 
 
 ## 7.1 Kehitysympäristö
 
-TOPi-tuote on tehty Javalla Spring ohjelmointikehystä käyttäen ja sen takia kehitys tapahtuu Spring Tool Suitella, joka on Eclipsen päälle rakennettu kehitystyökalu. Versionhallintaan käytimme Gittiä ja uusi ohjelmakoodi siirrettiin meidän omilla palvelimilla toimivaan Gitlab-versionhallintaympäristöön. Tämän lisäksi meillä oli käytössä myös oma CI (Continuous integration) eli jatkuvan integroinnin putki. Käytännössä tämä tarkoittaa siis sitä, että palvelimelle oli asennettu Jenkins-niminen jatkuvan integraation ohjelma, joka tarkistaa tasaisin väliajoin, että onko versionhallintaan tuotu uusia muutoksia. Mikäli on, niin silloin Jenkins ajaa ohjelmakoodiin kirjoitetut testitapaukset läpi ja sitä kautta varmistaa, että ohjelmisto toimii juuri kuten pitää. Mikäli testeissä ei havaita ongelmia, niin sitten ohjelmistosta rakennetaan paketti, joka laitetaan automaattisesti käyttöön testipalvelimelle. Tämä mahdollistaa sen, että uudet muutokset ovat testattavissa lähes heti sen jälkeen, kun ne on siirretty versionhallintaan. Etu tässä on se, että useat eri sidosryhmät pääset testaamaan uusia ominaisuuksia nopeasti itse, eivätkä he joudu luottamaan vain sprintin katselmoinnissa esiteltyihin tuloksiin.
+TOPi-tuote on tehty Javalla Spring ohjelmointikehystä käyttäen ja sen takia kehitys tapahtuu Spring Tool Suitella, joka on Eclipsen päälle rakennettu kehitystyökalu. Versionhallintaan käytimme Gittiä ja uusi ohjelmakoodi siirrettiin meidän omilla palvelimilla toimivaan Gitlab-versionhallintaympäristöön. Projektinhallinnan työkalu vaihtui kesken opinnäytetyön. Opinnäytetyön alkuvaiheessa tuotteen kehitysjono oli purettu TRAC-nimiseen avoimen lähdekoodin projektinhallintajärjestelmään (TRAC), mutta jo tätä ennen oli todettu, että JIRA (JIRA) palvelee toimeksiantajani tarpeita paremmin, ja tämä siirtymävaihe sattui osumaan samalle aikavälille opinnäytetyöni kanssa. Suurin osa opinnäytetyön projektinhallinnasta tapahtui JIRA:n kautta. Tämän lisäksi meillä oli käytössä myös oma CI (Continuous integration) eli jatkuvan integroinnin putki. Käytännössä tämä tarkoittaa siis sitä, että palvelimelle oli asennettu Jenkins-niminen jatkuvan integraation ohjelma, joka tarkistaa tasaisin väliajoin, että onko versionhallintaan tuotu uusia muutoksia. Mikäli on, niin silloin Jenkins ajaa ohjelmakoodiin kirjoitetut testitapaukset läpi ja sitä kautta varmistaa, että ohjelmisto toimii juuri kuten pitää. Mikäli testeissä ei havaita ongelmia, niin sitten ohjelmistosta rakennetaan paketti, joka laitetaan automaattisesti käyttöön testipalvelimelle. Tämä mahdollistaa sen, että uudet muutokset ovat testattavissa lähes heti sen jälkeen, kun ne on siirretty versionhallintaan. Etu tässä on se, että useat eri sidosryhmät pääset testaamaan uusia ominaisuuksia nopeasti itse, eivätkä he joudu luottamaan vain sprintin katselmoinnissa esiteltyihin tuloksiin.
 
 ### 7.2 Ensimmäinen Sprintti
 
@@ -257,9 +257,13 @@ Scrum Roles Demystified. Luettavissa: https://www.scrumalliance.org/agile-resour
 
 What is a Sprint? Luettavissa: https://www.scrum-institute.org/What_is_a_Sprint.php. Luettu: 12.04.2018
 
-Spring, Luettavissa: https://spring.io/. Luettu: 03.09.2018
+Spring. Luettavissa: https://spring.io/. Luettu: 03.09.2018
 
-Dojo Toolkit, Luettavissa: https://dojotoolkit.org/. Luettu: 03.09.2018
+Dojo Toolkit. Luettavissa: https://dojotoolkit.org/. Luettu: 03.09.2018
+
+TRAC. Luettavissa: https://trac.edgewall.org/. Luettu: 03.09.2018
+
+JIRA. Luettavissa: https://www.atlassian.com/software/jira. Luettu: 03.09.2018
 
 Kerminen 2009a, Bittikarttakuvien vektorointi. s. 2. Luettavissa: http://www.theseus.fi/handle/10024/2663. Luettu: 03.09.2018
 
@@ -271,7 +275,7 @@ Laakkonen 2015a, Selainpohjainen tietojärjestelmä prosessitiedon havainnollist
 
 Laakkonen 2015b, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.3. Luettu: 30.7.2018
 
-Laakkonen 2015c, Kristian Laakkonen, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 32 kappale 5.1. Luettu: 30.7.2018
+Laakkonen 2015c, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 32 kappale 5.1. Luettu: 30.7.2018
 
 Laakkonen 2015d, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.2. Luettu: 30.7.2018
 
