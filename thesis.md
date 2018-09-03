@@ -22,7 +22,7 @@ Tässä luvussa avataan erilaisia tiedonsiirtotekniikoita, joiden käyttämistä
 
 ### Ajax
 
-Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologioita, mitkä mahdollistavat tiedonsiirron selaimen ja palvelimen välillä dynaamisesti niin, että sivua ei tarvitse ladata aina uudelleen. Aikaisemmin tiedonsiirto tapahtui käyttäjän kannalta paljon rasittavammalla tavalla, sillä ennen pienikin muutos vaati sitä, että koko sivu ladattiin uudelleen. Ajax mahdollistaa asynkronisen tiedonsiirron, minkä avulla käyttäjän ei tarvitse katsella tyhjää ruutua sillä välin kun selain pyytää palvelimelta uutta dataa. (Garret, 2005)
+Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologioita, mitkä mahdollistavat tiedonsiirron selaimen ja palvelimen välillä dynaamisesti niin, että sivua ei tarvitse ladata aina uudelleen. Aikaisemmin tiedonsiirto tapahtui käyttäjän kannalta paljon rasittavammalla tavalla, sillä ennen pienikin muutos vaati sitä, että koko sivu ladattiin uudelleen. Ajax mahdollistaa asynkronisen tiedonsiirron, minkä avulla käyttäjän ei tarvitse katsella tyhjää ruutua sillä välin kun selain pyytää palvelimelta uutta dataa. (Garret 2005)
 
 <img src="proview-ajax.png"> Kuva 1
 Kuvassa 1 vasemmalla puolella näkyy "perinteinen" tiedonsiirtomalli, missä jokainen pyyntö palvelimalta pakottaa lataamaan koko sivun uudelleen. Kuvan oikealla puolella taas näkyy AJAXin tiedonsiirtomali, missä verkkosivuun upotettu "Ajax engine" hoitaa tiedonsiirron palvelimen ja selaimen välillä niin, että käyttäjän ei tarvitse ladata sivua uudelleen jokaisen pyynnön yhteydessä.
@@ -48,11 +48,11 @@ Digitaalisissa kuvat on yleensä jaettu kahteen eri kategoriaan, bittikarttakuvi
 
 Vektorigrafiikkakuvat eroavat bittikarttakuvista rakenteeltaan huomattavasti. Vektorigrafiikkatiedostoissa ei määritellä yksittäisiä pikseleitä, vaan tiedostoon määritellään kuvissa olevien objektien koordinaatisto, kuvan ankkuripisteet ja objektien muodot määritellään matemaattisien funktioiden avulla. Tämän takia vektorigrafiikkakuvat ovat resoluutioriippumattomia ja ne skaalautuvat helposti eri kokotarkoiutksiin. (Kerminen 2009b, 4, Kerminen 2009c, 5)
 
-ProView-työkalulla tehdyt prosessikaavionäytöt koostuvat yleensä useista yksinkertaisista kuvioista ja niiden täytyy skaalautua tarvittaessa sekä normaalilla työpöydällä olevaan FULL HD-resoluutioon ja voimalaitoksilla oleviin todella isoihin valvomonäyttöihin ja niiden laatu ei saa kärsiä. Tämän takia ProView:lla tehdyt prosessikaavionäytöt tallennetaan selaimissa toimiviksi SVG-tiedostoiksi.
+ProView-työkalulla tehdyt prosessikaavionäytöt koostuvat yleensä useista yksinkertaisista kuvioista ja niiden täytyy skaalautua tarvittaessa sekä normaalilla työpöydällä olevaan Full HD-resoluutioon ja voimalaitoksilla oleviin todella isoihin valvomonäyttöihin ja niiden laatu ei saa kärsiä. Tämän takia ProView:lla tehdyt prosessikaavionäytöt tallennetaan selaimissa toimiviksi SVG-tiedostoiksi.
 
 ## ProView 1.0
 
-ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. (SVG-Edit) Järjestelmä on osa Fortumin TOPi-tuoteperhettä (TOPi Energiatiedon hallintajärjestelmä) ja järjestelmällä on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuksia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi.
+ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. (SVG-Edit) Järjestelmä on osa Fortumin TOPi-tuoteperhettä (TOPi Energiatiedon hallintajärjestelmä) TOPi siis kokonaisuudessaan yksi iso web-sovellus, mikä on jaettu pienempiin alisovelluksiin kuten ProView-työkalu. TOPi:n backend on ohjelmoitu Javalla Spring-ohjelmointikehystä käyttäen (Spring) ja järjestelmän frontendissä on pääasiassa käytetty Dojo-nimistä ohjelmointikirjastoa. (Dojo Toolkit) ProView-työkalulla on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuksia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi.
 
 <img src="proview-process-view.png"> Kuva 3
 Kuvassa 3 näkyy prosessinäyttö, jossa on esitetty voimalaitoksen suorituskyvyn kannalta olennaiset luvut.
@@ -253,6 +253,10 @@ What is Scrum? Luettavissa: https://www.scrum.org/resources/what-is-scrum. Luett
 Scrum Roles Demystified. Luettavissa: https://www.scrumalliance.org/agile-resources/scrum-roles-demystified. Luettu: 12.04.2018
 
 What is a Sprint? Luettavissa: https://www.scrum-institute.org/What_is_a_Sprint.php. Luettu: 12.04.2018
+
+Spring, Luettavissa: https://spring.io/. Luettu: 03.09.2018
+
+Dojo Toolkit, Luettavissa: https://dojotoolkit.org/. Luettu: 03.09.2018
 
 Kerminen 2009a, Bittikarttakuvien vektorointi. s. 2. Luettavissa: http://www.theseus.fi/handle/10024/2663. Luettu: 03.09.2018
 
