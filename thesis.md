@@ -26,11 +26,11 @@ Tässä luvussa avataan erilaisia tiedonsiirtotekniikoita, joiden käyttämistä
 
 ### 3.1 Ajax
 
-Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologioita, mitkä mahdollistavat tiedonsiirron selaimen ja palvelimen välillä dynaamisesti niin, että sivua ei tarvitse ladata aina uudelleen. Aikaisemmin tiedonsiirto tapahtui käyttäjän kannalta paljon rasittavammalla tavalla, sillä ennen pienikin muutos vaati sitä, että koko sivu ladattiin uudelleen. Ajax mahdollistaa asynkronisen tiedonsiirron, minkä avulla käyttäjän ei tarvitse katsella tyhjää ruutua sillä välin kun selain pyytää palvelimelta uutta dataa. (Garret 2005)
+Ajax, eli Asynchronous JavaScript and XML on kokonaisuus erilaisia web-teknologioita, mitkä mahdollistavat tiedonsiirron selaimen ja palvelimen välillä dynaamisesti niin, että sivua ei tarvitse ladata aina uudelleen. Aikaisemmin tiedonsiirto tapahtui käyttäjän kannalta paljon rasittavammalla tavalla, sillä ennen pienikin muutos vaati sitä, että koko sivu ladattiin uudelleen. Ajax mahdollistaa asynkronisen tiedonsiirron, minkä avulla käyttäjän ei tarvitse katsella tyhjää ruutua sillä välin kun selain pyytää palvelimelta uutta dataa. (Garret 2005a)
 
 <img src="proview-ajax.png"> 
 
-Kuva 1
+Kuva 1. AJAXin tiedonsiirtomalli (Garret 2005b, 2)
 
 Kuvassa 1 vasemmalla puolella näkyy "perinteinen" tiedonsiirtomalli, missä jokainen pyyntö palvelimelta pakottaa lataamaan koko sivun uudelleen. Kuvan oikealla puolella taas näkyy AJAXin tiedonsiirtomali, missä verkkosivuun upotettu "Ajax engine" hoitaa tiedonsiirron palvelimen ja selaimen välillä niin, että käyttäjän ei tarvitse ladata sivua uudelleen jokaisen pyynnön yhteydessä.
 
@@ -40,7 +40,7 @@ WebSocket-protokolla eroaa Ajaxista hieman. Ajax-kutsut tapahtuu niin, että jok
 
 <img src="proview-websocket.png"> 
 
-Kuva 2
+Kuva 2. WebSocketin tiedonsiirtomalli (Laakkonen 2015a, 17)
 
 Kuvassa 2 näkyy WebSocketin tiedonsiirtomalli, missä näkyy kuinka auki olevan yhteyden yli voidaan siirtää tietoa useaan kertaan.
 
@@ -66,13 +66,13 @@ ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin pääl
 
 <img src="proview-process-view.png"> 
 
-Kuva 3
+Kuva 3. (Laakkonen 2015b, 3)
 
 Kuvassa 3 näkyy prosessinäyttö, jossa on esitetty voimalaitoksen suorituskyvyn kannalta olennaiset luvut.
 
 ProView:n prosessinäytöissä on staattisia ja muuttuvia elementtejä. Staattisilla elementeillä kuvataan yleensä eri prosessien yleinen kulku ja ns. isompi kokonaisuus. Muuttuvia elementtejä ovat esimerkiksi prosessin sisällä olevat muuttujat, mitkä näyttävät erilaisia arvoja. Nämä arvot voivat olla erilaisten pumppujen lämpötilat ynnä muut prosessille tärkeät tiedot. ProView:n näyttöjä pidetään laitosten valvomoilla auki jatkuvasti ja on tarkoitus, että näiden näyttöjen perusteella voidaan tarkastella voimalaitosten eri prosesseja lähes reaaliaikaisesti. Tämän takia tietojärjestelmän täytyy hakea muuttujien arvoja tietokannasta tasaisin väliajoin.
 
-Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) (Laakkonen 2015a, 35; Laakkonen 2015b, 55; Laakkonen 2015c, 32; Laakkonen 2015d, 55)
+Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) (Laakkonen 2015c, 35; Laakkonen 2015d, 55; Laakkonen 2015e, 32; Laakkonen 2015f, 55)
 
 ## 7. Kehityskohteet
 
@@ -80,11 +80,11 @@ Valitsimme ProView:n tuoteomistajan kanssa opinnäytetyölle kymmenen eri kehity
 
 <img src="table1.png"> 
 
-Taulukko 1
+Taulukko 1. Kehityskohteet ja niiden tarkempi kuvaus
 
 <img src="proview-grid.png"> 
 
-Kuva 4
+Kuva 4. ProView-työkalun ruudukko-ominaisuus
 
 ## 8. Työskentely
 
@@ -107,7 +107,7 @@ Kolmas työtehtävä oli pikanäppäin-painikkeen tekeminen. Tavoitteena oli, et
 
 <img src="proview-tooltip.png"> 
 
-Kuva 5
+Kuva 5. Pikanäppäin-painike
 
 Kuvassa 5 näkyy pikanäppäin-painikkeen sisältö.
 
@@ -133,7 +133,7 @@ Aloitin sprintin hieman haasteellisemmalla tehtävällä. Päätin aloittaa Mitt
 
 <img src="proview-variable.png"> 
 
-Kuva 6
+Kuva 6. Muuttujan asetukset
 
 Kuvassa 6 näkyy "Lisää muuttuja" -painikkeen luoma oma ikkuna, mistä päästään muuttamaan valitsemasi muuttujan asetuksia. Minun työtehtäväni ongelmatilanne oli sellainen, että jos valittu muuttuja oli ns. laskettu arvo, niin silloin sille täytyi aina asettaa samat asetukset. Nämä asetukset täytyi kuitenkin aina laittaa itse käsin. Tämä haluttiin automatisoida. Mikäli muuttuja oli laskettu arvo, niin silloin attribuutin täytyi olla kuvan 3 alasvetovalikossa näkyvä "trend value" ja samalla myös muuttujan väriä haluttiin muuttaa. Muuttujilla on myös todella suuri määrä attribuutteja määritelty tietokantaan, niistä minulle olennainen attribuutti oli "ip_plant_area". Suurin osa muuttujiin liittyvistä lainalaisuuksista jäi minulle vielä mysteeriksi, mutta ymmärsin, että jos plant_arean arvo oli CAL-alkuinen (Calculated Value), niin silloin sitä täytyy käsitellä kuin laskettua arvoa.
 
@@ -155,7 +155,7 @@ Otsikkokenttä oli vuorostaan yksinkertaisempi työ, koska sitä varten ei tarvi
 
 <img src="proview-watermark.png"> 
 
-Kuva 7
+Kuva 7. Vesileima ja otsikkokenttä
 
 Kuvassa 7 näkyy TOPi:n logo ja otsikkokenttä uudessa näytössä.
 
@@ -177,13 +177,13 @@ Muuttujien raja-arvojen haun ajattelin tehdä samanlaisella toteutuksella kuin i
 
 <img src="proview-variable-values-before.png"> 
 
-Kuva 8
+Kuva 8. Ensimmäinen toteutus
 
 Kuvassa 8 näkyy ensimmäisen toteutuksen lopputulos. "getvaluesinbatch" endpoint hakee kaikki halutut muuttujat ja "getpvvariableinformation" endpoint hakee muuttujan raja-arvot ja statuksen. Tässä toteutuksessa muuttujalistassa on 83 muuttujaa ja sekä muuttujia ja raja-arvoja haetaan yhtäaikaa muutaman sekunnin välein. Tässä kuvassa voi huomata, että muuttujien ja raja-arvojen haussa kestää vaihtelevasti 280-725 millisekuntia ja sen todettiin olevan aivan liian hidasta vaatimuksiin nähden. Keskustelin tästä muiden kehittäjien ja tuoteomistajan kanssa ja tulimme siihen lopputulokseen, että vain muuttujien lukuarvo on sellainen, minkä täytyy päivittyä muutaman sekunnin välein, koska on paljo harvinaisempaa, että muuttujien raja-arvot muuttuvat.
 
 <img src="proview-variable-values-after.png"> 
 
-Kuva 9
+Kuva 9. Toinen toteutus
 
 Kuvassa 9 näkyy seuraava toteutus, missä muuttujien raja-arvot haetaan vain silloin kun sivu ladataan ja muuttujien lukuarvojen haku jatkuu muutaman sekunnin välein. Kuvasta huomataan, että suorituskyky paranee huomattavasti. Raja-arvojen haussa kestää yhä hieman pidempään, mutta muuttujen lukuarvojen haussa kestää pääosin alle 100 millisekuntia. Ainoa ongelma tässä toteutuksessa on se, että jos muuttujien raja-arvot muuttuvat, niin silloin sivu täytyy ladata uudelleen, että uudet raja-arvot tulevat näkyviin. Tuoteomistajan mukaan tämä ei ole ongelma, koska tuollainen muutos olisi muutenkin sen verran iso, että päivitys tuntuu käyttäjälle loogiselta.
 
@@ -191,7 +191,7 @@ Kun muuttujien hakulogiikka oli saatu valmiiksi, täytyi saada frontendin ulkoas
 
 <img src="proview-additional-information.png"> 
 
-Kuva 10
+Kuva 10. Vaihtoehtoisen lisätiedon lisäyspainike.
 
 Kuvassa 10 näkyy painike otsikolla "show additional information".
 
@@ -201,7 +201,7 @@ Muuten tuo suunnitelma olikin toimiva, mutta statuksia oli niin paljon erilaisia
 
 <img src="proview-variable-information.png"> 
 
-Kuva 11
+Kuva 11. Toteutuksen graafinen ulkoasu
 
 Kuvassa 11 näkyy uusi muuttujalista, mihin on lisätty muuttujien raja-arvot ja kuvassa näkyy myös pop-up ikkuna, mihin on lisätty muuttujan status muodossa `Status: Initial`, missä Initial tarkoittaa itse muuttujan statusta.
 
@@ -235,23 +235,15 @@ Kävin myös opinnäytetyön teknisen osuuden jälkeen keskustelua projektin tuo
 
 ## Lähteet
 
-Garret 2005, Ajax: A New Approach to Web Applications Luettavissa: https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf. Luettu: 23.08.2018
-
-PostgreSQL. Luettavissa: https://www.postgresql.org/about/ Luettu: 21.09.2018
-
-The WebSocket Protocol 2011. Luettavissa: https://tools.ietf.org/html/rfc6455 Luettu: 23.08.2018
-
-What is Scrum? Luettavissa: https://www.scrum.org/resources/what-is-scrum. Luettu: 12.04.2018
-
-Scrum Roles Demystified. Luettavissa: https://www.scrumalliance.org/agile-resources/scrum-roles-demystified. Luettu: 12.04.2018
-
-What is a Sprint? Luettavissa: https://www.scrum-institute.org/What_is_a_Sprint.php. Luettu: 12.04.2018
-
-Spring. Luettavissa: https://spring.io/. Luettu: 03.09.2018
-
 Dojo Toolkit. Luettavissa: https://dojotoolkit.org/. Luettu: 03.09.2018
 
-TRAC. Luettavissa: https://trac.edgewall.org/. Luettu: 03.09.2018
+Garret 2005a, Ajax: A New Approach to Web Applications Luettavissa: https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf. Luettu: 23.08.2018
+
+Garret 2005, Ajax: A New Approach to Web Applications s.2 Luettavissa: https://courses.cs.washington.edu/courses/cse490h/07sp/readings/ajax_adaptive_path.pdf. Luettu: 23.08.2018
+
+Github.com. Luettavissa: https://github.com/SVG-Edit/svgedit/pull/169, luettu: 03.08.2018
+
+Introduction to asynchronous JavaScript, luettavissa: https://www.pluralsight.com/guides/introduction-to-asynchronous-javascript luettu: 06.08.2018
 
 JIRA. Luettavissa: https://www.atlassian.com/software/jira. Luettu: 03.09.2018
 
@@ -259,18 +251,32 @@ Kerminen 2009a, Bittikarttakuvien vektorointi. s. 2. Luettavissa: http://www.the
 
 Kerminen 2009b, Bittikarttakuvien vektorointi. s. 4. Luettavissa: http://www.theseus.fi/handle/10024/2663. Luettu: 03.09.2018
 
+Laakkonen 2015a, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 17 kappale 4.1.1. Luettu: 21.09.2018
+
+Laakkonen 2015b, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 3 kappale 2.1. Luettu: 21.09.2018
+
+Laakkonen 2015c, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 35 kappale 6.2.2. Luettu: 02.05.2018
+
+Laakkonen 2015d, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.3. Luettu: 30.7.2018
+
+Laakkonen 2015e, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 32 kappale 5.1. Luettu: 30.7.2018
+
+Laakkonen 2015f, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.2. Luettu: 30.7.2018
+
+PostgreSQL. Luettavissa: https://www.postgresql.org/about/ Luettu: 21.09.2018
+
+Scrum Roles Demystified. Luettavissa: https://www.scrumalliance.org/agile-resources/scrum-roles-demystified. Luettu: 12.04.2018
+
+Spring. Luettavissa: https://spring.io/. Luettu: 03.09.2018
+
 SVG-Edit. Luettavissa: https://github.com/SVG-Edit Luettu: 12.04.2018
-
-Laakkonen 2015a, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 35 kappale 6.2.2. Luettu: 02.05.2018
-
-Laakkonen 2015b, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.3. Luettu: 30.7.2018
-
-Laakkonen 2015c, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 32 kappale 5.1. Luettu: 30.7.2018
-
-Laakkonen 2015d, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.2. Luettu: 30.7.2018
-
-Github.com. Luettavissa: https://github.com/SVG-Edit/svgedit/pull/169, luettu: 03.08.2018
 
 TOPi Energiatiedon hallintajärjestelmä, luettavissa: https://www.fortum.fi/yrityksille-ja-yhteisoille/palvelut-voimalaitoksille/lampovoimalaitoksille-ja/energianhallinta-ja-2 luettu: 06.08.2018
 
-Introduction to asynchronous JavaScript, luettavissa: https://www.pluralsight.com/guides/introduction-to-asynchronous-javascript luettu: 06.08.2018
+The WebSocket Protocol 2011. Luettavissa: https://tools.ietf.org/html/rfc6455 Luettu: 23.08.2018
+
+TRAC. Luettavissa: https://trac.edgewall.org/. Luettu: 03.09.2018
+
+What is Scrum? Luettavissa: https://www.scrum.org/resources/what-is-scrum. Luettu: 12.04.2018
+
+What is a Sprint? Luettavissa: https://www.scrum-institute.org/What_is_a_Sprint.php. Luettu: 12.04.2018
