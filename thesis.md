@@ -54,7 +54,7 @@ Opinnäytetyön aikana olin osana Scrum tiimiä, missä minä itse keskityin Pro
 
 ## 5. Jatkuva integraatio
 
-Jatkuvalla integraatiolla tarkoitetaan automatisoitua prosessia, missä sovellus pyritään "kääntämään" tai "pakkaamaan" mahdollisimman usein. Tämä mahdollistaa sen, että potentiaaliset virhetilanteet huomataan nopeasti ja ne ehditään myös korjata tehokkaasti. Tätä prosessia voidaan esimerkiksi automatisoida siten, että heti kun versionhallintaan syötetään uutta dataa, niin jatkuvan integraation automatisoitu työkalu ajaa testit ja varmistaa, että sovellus toimii odotetusti ja varmistaa, että sovelluksesta on aina toimiva ja testattava versio käynnissä palvelimella. Jatkuvan integraation hyödyntäminen siirtää toistuvia työtehtäviä automaatiolle ja varmistaa, että uudet koodit siirtyy testattavaksi ja palvelimelle aina samalla tavalla. Tämän avulla myös inhimmillisten virheiden mahdollisuus laskee huomattavasti.
+Jatkuvalla integraatiolla tarkoitetaan automatisoitua prosessia, missä sovellus pyritään "kääntämään" tai "pakkaamaan" mahdollisimman usein. Tämä mahdollistaa sen, että potentiaaliset virhetilanteet huomataan nopeasti ja ne ehditään myös korjata tehokkaasti. Tätä prosessia voidaan esimerkiksi automatisoida siten, että heti kun versionhallintaan syötetään uutta dataa, niin jatkuvan integraation automatisoitu työkalu ajaa testit ja varmistaa, että sovellus toimii odotetusti ja varmistaa, että sovelluksesta on aina toimiva ja testattava versio käynnissä palvelimella. Jatkuvan integraation hyödyntäminen siirtää toistuvia työtehtäviä automaatiolle ja varmistaa, että uudet koodit siirtyy testattavaksi ja palvelimelle aina samalla tavalla. Tämän avulla myös inhimmillisten virheiden mahdollisuus laskee huomattavasti. (Salmi 2013, 6; Myllykangas 2017, 2)
 
 ## 5. Vektorigrafiikka
 
@@ -267,7 +267,11 @@ Laakkonen 2015e, Selainpohjainen tietojärjestelmä prosessitiedon havainnollist
 
 Laakkonen 2015f, Selainpohjainen tietojärjestelmä prosessitiedon havainnollistamiseen, s. 55 kappale 7.2. Luettu: 30.7.2018
 
+Myllykangas 2017, Jatkuva  integrointi  ja  pilvipalvelut  Metropolian opetuksessa, s. 2 kappale 2. Luettavissa: http://www.theseus.fi/handle/10024/127649 Luettu: 02.10.2018
+
 PostgreSQL. Luettavissa: https://www.postgresql.org/about/ Luettu: 21.09.2018
+
+Salmi 2013, Jatkuva integraatio pilvipalveluissa, s. 6 kappale 3.2. Luettavissa: http://www.theseus.fi/handle/10024/60994 Luettu: 02.10.2018
 
 Scrum Roles Demystified. Luettavissa: https://www.scrumalliance.org/agile-resources/scrum-roles-demystified. Luettu: 12.04.2018
 
