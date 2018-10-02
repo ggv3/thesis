@@ -56,7 +56,7 @@ Opinnäytetyön aikana olin osana Scrum tiimiä, missä minä itse keskityin Pro
 
 Jatkuvalla integraatiolla tarkoitetaan automatisoitua prosessia, missä sovellus pyritään "kääntämään" tai "pakkaamaan" mahdollisimman usein. Tämä mahdollistaa sen, että potentiaaliset virhetilanteet huomataan nopeasti ja ne ehditään myös korjata tehokkaasti. Tätä prosessia voidaan esimerkiksi automatisoida siten, että heti kun versionhallintaan syötetään uutta dataa, niin jatkuvan integraation automatisoitu työkalu ajaa testit ja varmistaa, että sovellus toimii odotetusti ja varmistaa, että sovelluksesta on aina toimiva ja testattava versio käynnissä palvelimella. Jatkuvan integraation hyödyntäminen siirtää toistuvia työtehtäviä automaatiolle ja varmistaa, että uudet koodit siirtyy testattavaksi ja palvelimelle aina samalla tavalla. Tämän avulla myös inhimmillisten virheiden mahdollisuus laskee huomattavasti. (Salmi 2013, 6; Myllykangas 2017, 2)
 
-## 5. Vektorigrafiikka
+## 6. Vektorigrafiikka
 
 Digitaaliset kuvat on yleensä jaettu kahteen eri kategoriaan, bittikarttakuviin ja vektorigrafiikkakuviin. Bittikarttakuvat koostuvat pikseleistä ja pikseleiden määrä riippuu kuvatiedoston määritetystä resoluutiosta, eli pikselitiheydestä. Mitä suurempi resoluutio, sitä tarkempi kuva ja samalla suurempi tiedostokoko. Ongelmana tällaisissa kuvissa on skaalautuvuus. Bittikarttakuvaa voidaan suurentaa, mutta sen resoluutio ei päivity samassa suhteessa, eli silloin myös pikselimäärät pysyy samana. Lopputuloksena on yleensä huomattavasti epätarkempi kuva. (Kerminen 2009a, 2)
 
@@ -64,7 +64,7 @@ Vektorigrafiikkakuvat eroavat bittikarttakuvista rakenteeltaan huomattavasti. Ve
 
 ProView-työkalulla tehdyt prosessikaavionäytöt koostuvat yleensä useista yksinkertaisista kuvioista ja niiden täytyy skaalautua tarvittaessa sekä normaaliin työpöytäkäytössä oleviin näyttöihin ja voimalaitoksilla oleviin todella isoihin valvomonäyttöihin ja niiden laatu ei saa kärsiä. Tämän takia ProView:lla tehdyt prosessikaavionäytöt tallennetaan selaimissa toimiviksi SVG-tiedostoiksi.
 
-## 6. ProView 1.0
+## 7. ProView 1.0
 
 ProView on SVG-Edit nimisen avoimen lähdekoodin vektorigrafiikkaeditorin päälle rakennettu tietojärjestelmä. (SVG-Edit) Järjestelmä on osa Fortumin TOPi-tuoteperhettä (TOPi Energiatiedon hallintajärjestelmä) TOPi on siis kokonaisuudessaan yksi iso web-sovellus, mikä on jaettu pienempiin alisovelluksiin kuten ProView-työkalu. TOPi:n backend on ohjelmoitu Javalla Spring-ohjelmointikehystä käyttäen (Spring) ja tietokantana on käytetty PostgreSQL-tietokantaa, joka on avoimen lähdekoodin relaatiotietokanta. (PostgreSQL) Järjestelmän frontendissä on pääasiassa käytetty Dojo-nimistä ohjelmointikirjastoa. (Dojo Toolkit) ProView-työkalulla on kaksi käyttötarkoitusta: Sillä täytyy pystyä luomaan ja tarkastelemaan prosessinäyttöjä. Prosessinäyttöjen luomiseen tarvittiin editori, mikä on tarpeeksi käyttäjäystävällinen ja että siinä on riittävästi toiminnallisuuksia. Nämä vaatimukset huomioon ottaen, päädyttiin valitsemaan SVG-Edit järjestelmän pohjaratkaisuksi.
 
@@ -78,7 +78,7 @@ ProView:n prosessinäytöissä on staattisia ja muuttuvia elementtejä. Staattis
 
 Kristian Laakkosen diplomityön toteutushetkellä todettiin, että prosessinäytössä olevien muuttujilla pitää olla muutaman sekunnin päivitysväli. Nämä vaatimukset huomioon ottaen todettiin, että WebSocket-teknologia olisi paras muuttujien arvojen hakemiseen tietokannasta, mutta ongelmaksi muodostui selaintuki. Järjestelmän täytyi tukea Internet Explorerin versioita 9, 10 ja 11 ja siksi tämä teknologia täytyi hylätä. Koska WebSocket ei ollut toimiva ratkaisu, niin tiedonsiirtoon päätettiin käyttää AJAXia. (Asynchronous JavaScript and XML) (Laakkonen 2015c, 35; Laakkonen 2015d, 55; Laakkonen 2015e, 32; Laakkonen 2015f, 55)
 
-## 7. Kehityskohteet
+## 8. Kehityskohteet
 
 Valitsimme ProView:n tuoteomistajan kanssa opinnäytetyölle kymmenen eri kehityskohdetta. Työskentely kehityskohteiden kanssa tapahtui Scrumin mukaisesti. Työskentelin niiden kanssa osa-aikaisesti kahden viikon sprinteissä ja työ todettiin valmiiksi, jos Sprintin katselmoinnissa ei löytynyt mitään valitettavaa. Taulukossa 1 on eritelty kaikki opinnäytetyöhön valitut kehityskohteet ja selitetty tarkemmin niiden määritykset
 
@@ -90,15 +90,15 @@ Taulukko 1. Kehityskohteet ja niiden tarkempi kuvaus
 
 Kuva 4. ProView-työkalun ruudukko-ominaisuus
 
-## 8. Työskentely
+## 9. Työskentely
 
 Tässä luvussa käydään läpi työssä käytettyä kehitys- ja testiympäristöä ja opinnäytetyön teknistä työkentelyä. Opinnäytetyötä toteutettiin Scrumia noudattaen ja minä olin mukana Scrum tiimissä, missä pidettiin kahden viikon sprinttejä joihin osallistuin kahtena päivänä viikossa.
 
-### 8.1 Kehitysympäristö
+### 9.1 Kehitysympäristö
 
 TOPi-tuote on tehty Javalla Spring ohjelmointikehystä käyttäen ja sen takia kehitys tapahtui Spring Tool Suitella, joka on Eclipsen päälle rakennettu kehitystyökalu. TOPi-tuotteeseen kuuluu useita eri sovelluksia, joista osa on myös riippuvaisia toisistaan, siksi TOPi-tuotetta kehitetään yhtenä kokonaisuutena, eikä esimerkiksi oteta yhtä sovellusta irralleen omaan ympäristöön. Tämän takia myös tietokanta, joka on TOPin tapauksessa PostgreSQL, on laaja. Kirjoitushetkellä tietokanta pitää sisällään 176 erilaista tietokantataulua, jotka kattavat kaikki eri TOPin sovellukset ja osan muuttujadatasta, mitä esimerkiksi ProView käyttää. Versionhallintaan käytettiin Gittiä ja uusi ohjelmakoodi siirrettiin Fortumin omilla palvelimilla toimivaan Gitlab-versionhallintaympäristöön. Projektinhallinnan työkalu vaihtui kesken opinnäytetyön. Opinnäytetyön alkuvaiheessa tuotteen kehitysjono oli purettu TRAC-nimiseen avoimen lähdekoodin projektinhallintajärjestelmään (TRAC), mutta jo tätä ennen oli todettu, että JIRA (JIRA) palvelee toimeksiantajani tarpeita paremmin, ja tämä siirtymävaihe sattui osumaan samalle aikavälille opinnäytetyöni kanssa. Suurin osa opinnäytetyön projektinhallinnasta tapahtui JIRA:n kautta. Tämän lisäksi kehityksen aikana oli käytössä myös CI (Continuous integration) eli jatkuvan integroinnin putki. Käytännössä tämä tarkoittaa siis sitä, että palvelimelle oli asennettu Jenkins-niminen jatkuvan integraation ohjelma, joka tarkistaa tasaisin väliajoin, että onko versionhallintaan tuotu uusia muutoksia. Mikäli on, niin silloin Jenkins ajaa ohjelmakoodiin kirjoitetut testitapaukset läpi ja sitä kautta varmistaa, että ohjelmisto toimii juuri kuten pitää. Mikäli testeissä ei havaita ongelmia, niin sitten ohjelmistosta rakennetaan paketti, joka laitetaan automaattisesti käyttöön testipalvelimelle. Tämä mahdollistaa sen, että uudet muutokset ovat testattavissa lähes heti sen jälkeen, kun ne on siirretty versionhallintaan. Etu tässä on se, että useat eri sidosryhmät pääset testaamaan uusia ominaisuuksia nopeasti itse, eivätkä he joudu luottamaan vain sprintin katselmoinnissa esiteltyihin tuloksiin.
 
-### 8.2 Ensimmäinen Sprintti
+### 9.2 Ensimmäinen Sprintti
 
 Ensimmäisen sprintin suunnittelussa keskityttiin miettimään sidosryhmien kanssa opinnäytetyön laajuutta.
 Sprintin suunnittelussa myös päätettiin, että aiemmin mainitut kehityskohteet ovat vain minun työlistallani ja muut Scrum tiimin jäsenet eivät ota niitä omalle työlistalleen. Minulle annettiin vapaat kädet päättää, että missä järjestyksessä teen tarvitttavat työt.
@@ -119,7 +119,7 @@ Sprintin viimeiseksi tehtäväksi jäi ProView:ssa olevan ruudukko-ominaisuuden 
 
 Sprintin katselmoinnissa sidosryhmät tarkastelivat aikaan saatuja muutoksia, ja pääosin he olivat tyytyväisiä, mutta tuoteomistajalta tuli muutama korjauspyyntö. Komponenttien lisäyspainikkeiden kuvat haluttiin muuttaa, koska ne eivät sopineet yleiseen ulkoasuun muiden painikkeiden kanssa ja lisäksi uusi oletusresoluutio aiheutti sen, että uudet näytöt oli oletuksena zoomattu hieman liian lähelle. ProView:ssa on "sovita näyttöön" -toiminto erikseen, ja toiveena oli, että se tapahtuisi myös aina kun luodaan uusi näyttö. Muuten kaikkiin muihin muutoksiin oltiin tyytyväisiä.
 
-### 8.3 Toinen Sprintti
+### 9.3 Toinen Sprintti
 
 Toisen sprintin suunnittelu oli opinnäytetyön puitteissa melko lyhyt. Työskentely jatkui samalla suunnitelmalla kuin ensimmäisessä sprintissä. Minun työtehtäväni olivat ProView 1.1 kehityskohteet ja minulla oli vapaus valita missä järjestyksessä toteutin niitä.
 
@@ -131,7 +131,7 @@ Tarkoituksenani oli aloittaa "Mittauksen lasketun arvon automatisointi vielä to
 
 Sprintin katselmoinnissa esittelin tekemäni muutokset. Vaikka ne olivatkin melko vähäiset, niin sidosryhmät olivat tyytyväisiä. Uudet kuvat istuivat hyvin ProView-työkalun yleisilmeeseen ja näyttöjen kohdistaminen ilman ylimääräistä zoomausta toimi juuri kuten piti.
 
-### 8.4 Kolmas Sprintti
+### 9.4 Kolmas Sprintti
 
 Aloitin sprintin hieman haasteellisemmalla tehtävällä. Päätin aloittaa Mittauksen lasketun arvon automatisoinnin. Prosessinäyttöihin voidaan tosiaan lisätä muuttujia ja niille muuttujille voidaan tehdä myös hyvin paljon muutoksia. Muuttujia voidaan hakea useammasta eri tietokannasta ja joissain tietokannassa sijaitsee vain tietynlaisia muuttujia, mille täytyy aina asettaa erilaiset parametrit tapauksesta riippuen.
 
@@ -147,7 +147,7 @@ Zoomin korjaaminen osoittautui taas hieman erilaiseksi haasteeksi. ProView:n zoo
 
 Sprintin katselmoinnissa oltiin erittäin tyytyväisiä lopputuloksiin. Varsinkin zoomin korjaus on sellainen ominaisuus, minkä korjauksia oltiin odotettu jo pitkään. Sidosryhmät olivat nähneet sen toiminnallisuuden ongelmallisena lähes alusta lähtien. Lasketun arvon automatisointi oli myös toivottu uudistus ja sen toiminnallisuus vastasi sidosryhmien odotuksia.
 
-### 8.5 Neljäs Sprintti
+### 9.5 Neljäs Sprintti
 
 Neljäs sprintti keskittyi uusien SVG-elementtien lisäämiseen uuteen näyttöön. Halusin saada vesileiman ja otsikkokentän lisättyä uusiin näyttöihin.
 
@@ -167,7 +167,7 @@ Ehdin myös suunnitella datan lisäämistä muuttujalistoihin. Lähtöasetelma o
 
 Sprintin katselmointi meni samalla kaavalla kuin ennenkin. Toteutetut muutokset olivat mieluisia. Erityisesti tärkeitä huomioita olivat, että TOPi:n logoa ja otsikkokenttää voi halutessaan siirtää ja poistaa uudesta näytöstä.
 
-### 8.6 Viides Sprintti
+### 9.6 Viides Sprintti
 
 Opinnäytetyön piti alkuperäisen suunnitelman mukaan kestää neljä sprinttiä, mutta aikataulu suunniteltiin joustavaksi, että työskentelyä voitaisiin tarvittaessa jatkaa vielä yhden sprintin verran. Aiemmin mainittu sairastumiseni viivästytti hieman toteutusta, joten päätimme, että teen vielä yhden sprintin verran töitä, jonka jälkeen tarkastelemme tuloksia ja päätämme opinnäytetyön teknisen osuuden.
 
@@ -211,7 +211,7 @@ Kuvassa 11 näkyy uusi muuttujalista, mihin on lisätty muuttujien raja-arvot ja
 
 Sprintin katselmoinnissa todettiin, että muuttujalistan ulkoasu kaipaa vielä hiomista, mutta ohjelmalogiikka toimii juuri kuten pitääkin. Toiveena oli, että muuttujien raja-arvot saataisiin järkevästi omiin sarakkaeisiin, mikä tekisi listojen seuraamisesta hieman selkeämpää. Toteutuksen aikana käytin myös hieman aikaa muuttujalistan toteutukseen, mutta tulimme muun kehitystiimis kanssa siihen tulokseen, että toteutus vaatisi jo olemassaolevan koodin siivoamista ja siihen täytyisi käyttää liikaa aikaa, joten se jätettin tämän sprintin ulkopuolelle.
 
-## 9. Yhteenveto
+## 10. Yhteenveto
 
 Viimeisessä luvussa arvioin omaa työskentelyäni, kuinka tavoitteet saavutettiin ja analysoin lopputuloksia.
 
@@ -219,7 +219,7 @@ Aloitin opinnäytetyön tekemisen käymällä eri kehityskohteet läpi toimeksia
 
 Opinnäytetyöprojekti oli itsessään todella mielenkiintoinen. Olen aina ollut sitä mieltä, että on todella mielekästä työskennellä projektien kanssa, mitä ihmiset oikeasti käyttävät. Työskentelymotivaatio tehdä laadukasta ohjelmakoodia nousee korkeammalle, koska keskinkertaisista ratkaisuista kärsisivät myös muut käyttäjät. Nyt pääsin myös tutustumaan minulle täysin uusiin työskentelyalueeseen. Olen aiemminkin tehnyt ohjelmistoja, mutta työkokemukseni energia-alalla oli opinnäytetyön alussa todella rajallinen, joten jouduin usein kysymään sidosryhmiltä, että mitkä on eri työtehtävien tausta, että kykenin tekemään toiminnallisuuksia mitkä vastaavat juuri heidän tarpeitaan.
 
-### 9.1 Haasteet
+### 10.1 Haasteet
 
 Opinnäytetyön suurimmat haasteet liittyivät ehdottomasti ympäristöön missä työskentelin. Energia-alan eri lainalaisuudet, termistöt ja monimuotoisuus yllätti minut kehityksen aikana. Esimerkiksi kaikki tieto mitä muuttujissa säilytetään ja niiden tarpeet ovat vieläkin minulle hieman mysteeri, mutta sain selvitettyä kaiken olennaisen, että pystyin suorittamaan työtehtäväni.
 
@@ -229,7 +229,7 @@ Ja yksi mainittava haaste oli myös yksinkertaisesti se, että oikeassa työsken
 
 Aikataulu myös odottautui haasteeksi. Alkuperäinen aikataulu oli mitoitettu niin, että työskentely kestäisi neljä sprinttiä, mutta sairastuminen venytti työaikaa vielä yhden sprintin verran. Tämä oli tosin huomioitu koko opinnäytetyöprojektin aikataulussa, joten opinnäytetyön tekninen osuus valmistui sinänsä ajallaan. Opinnäytetyön kirjallinen osuus taas valitettavasti venyi syksylle henkilökohtaisten haasteiden vuoksi.
 
-### 9.2 Tavoitteiden saavuttaminen
+### 10.2 Tavoitteiden saavuttaminen
 
 Opinnäytetyöhön valittiin kymmenen kehityskohdetta joista saatiin toteutettua yhdeksän. Ainoa asia jota ei toteutettu, oli kirjastokomponenttien yhtenäistäminen. Tämäkin jäi tekemättä lähinnä siksi, että samaan aikaan eräs toinen kollega samasta scrum tiimistä toteutti ominaisuutta, mikä olisi pienentänyt komponenttien määrää tuntuvasti. Kirjastokomponenteissa voi esimerkiksi olla samasta pumpusta kolme eri versiota, missä ainoa eroavaisuus on pumpun väri. Tämä ominaisuus olisi tehnyt mahdolliseksi sen, että kirjastokomponenttina olisi vain yksi pumpppu ja sitä asettaessa käyttäjä saisi valita itse pumppuun värin. Tämä toteutus venyi sitten sen verran pitkälle, että kirjastokomponentteja ei kannattanut alkaa yhtenäistämään tämän opinnäytetyön puitteissa. Käytännössä siis sain toteutettua kaikki kehityskohteet, mitkä pystyin. Mielestäni saavutin siis tavoitteet toimeksiantajan vaatimusten mukaan.
 
